@@ -1,0 +1,12 @@
+{
+  "name": "fomus-ai-training",
+  "version": "1.0.0",
+  "description": "FOMUS AI研修 - 中小企業向けAI活用トレーニング",
+  "scripts": {
+    "dev": "npx http-server -p 3000 -o",
+    "serve": "npx http-server -p 3000"
+  },
+  "keywords": ["AI", "研修", "ChatGPT", "Gemini", "MidJourney", "SUNO", "中小企業"],
+  "author": "FOMUS",
+  "license": "MIT"
+}

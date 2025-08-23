@@ -1,0 +1,2374 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>経営改善につながるAI人材育成研修｜FOMUS</title>
+  <meta name="description" content="FOMUSのAI研修は、中小企業の経営改善に直結する実践型プログラム。ChatGPTや画像/音楽生成AIを体験し、社員が"楽しく"AIを活用できる人材に育ちます。助成金対応で実質負担5万円から。">
+  
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@300;400;500;600&display=swap');
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    :root {
+      --tiffany-blue: #0ABAB5;
+      --tiffany-light: #E0F7F6;
+      --tiffany-dark: #087E7B;
+      --platinum: #E5E4E2;
+      --champagne: #F7E7CE;
+      --pearl: #FAFAFA;
+      --gold: #D4AF37;
+      --charcoal: #2C3E50;
+      --silk: #F8F8F8;
+    }
+    
+    body {
+      font-family: 'Montserrat', 'Hiragino Sans', sans-serif;
+      line-height: 1.8;
+      color: var(--charcoal);
+      background: linear-gradient(180deg, #FFFFFF 0%, var(--pearl) 50%, var(--tiffany-light) 100%);
+      overflow-x: hidden;
+    }
+    
+    ::selection {
+      background: var(--tiffany-blue);
+      color: white;
+    }
+    
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+    
+    /* Luxury Header */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(20px);
+      box-shadow: 0 2px 30px rgba(10, 186, 181, 0.08);
+      z-index: 1000;
+      padding: 20px 0;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    
+    .logo-icon {
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, var(--tiffany-blue), var(--tiffany-dark));
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 24px;
+      font-weight: 600;
+      box-shadow: 0 4px 20px rgba(10, 186, 181, 0.3);
+      position: relative;
+    }
+    
+    .logo-icon::after {
+      content: '';
+      position: absolute;
+      inset: -2px;
+      border-radius: 50%;
+      border: 1px solid var(--gold);
+      opacity: 0.5;
+    }
+    
+    .logo-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 24px;
+      font-weight: 400;
+      letter-spacing: 2px;
+      color: var(--charcoal);
+    }
+    
+    .logo-text span {
+      color: var(--tiffany-blue);
+      font-weight: 600;
+    }
+    
+    nav {
+      display: flex;
+      gap: 40px;
+    }
+    
+    nav a {
+      text-decoration: none;
+      color: var(--charcoal);
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      position: relative;
+      transition: color 0.3s;
+    }
+    
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--tiffany-blue);
+      transition: width 0.3s;
+    }
+    
+    nav a:hover {
+      color: var(--tiffany-blue);
+    }
+    
+    nav a:hover::after {
+      width: 100%;
+    }
+    
+    /* Hero Section - Luxury Style */
+    .hero {
+      padding: 140px 0 100px;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+    }
+    
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 100%;
+      background: 
+        radial-gradient(circle at 20% 50%, rgba(10, 186, 181, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 80% 50%, rgba(212, 175, 55, 0.03) 0%, transparent 50%);
+      pointer-events: none;
+    }
+    
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+    
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 64px;
+      font-weight: 300;
+      line-height: 1.1;
+      margin-bottom: 32px;
+      letter-spacing: -1px;
+    }
+    
+    .luxury-accent {
+      background: linear-gradient(135deg, var(--tiffany-blue), var(--tiffany-dark));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-weight: 600;
+    }
+    
+    .subtitle {
+      font-size: 28px;
+      color: var(--charcoal);
+      opacity: 0.8;
+      font-weight: 300;
+    }
+    
+    .hero-text {
+      font-size: 18px;
+      color: var(--charcoal);
+      margin-bottom: 48px;
+      line-height: 1.8;
+      opacity: 0.9;
+    }
+    
+    .button-group {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-bottom: 32px;
+    }
+    
+    .btn-luxury {
+      background: linear-gradient(135deg, var(--tiffany-blue), var(--tiffany-dark));
+      color: white;
+      padding: 18px 48px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 14px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      display: inline-block;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 10px 30px rgba(10, 186, 181, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .btn-luxury::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+      transition: left 0.5s;
+    }
+    
+    .btn-luxury:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 15px 40px rgba(10, 186, 181, 0.4);
+    }
+    
+    .btn-luxury:hover::before {
+      left: 100%;
+    }
+    
+    .btn-outline-luxury {
+      background: transparent;
+      color: var(--tiffany-blue);
+      padding: 18px 48px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 14px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      display: inline-block;
+      border: 1px solid var(--tiffany-blue);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .btn-outline-luxury::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: var(--tiffany-blue);
+      transition: left 0.4s;
+      z-index: -1;
+    }
+    
+    .btn-outline-luxury:hover {
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(10, 186, 181, 0.3);
+    }
+    
+    .btn-outline-luxury:hover::before {
+      left: 0;
+    }
+    
+    .small-text {
+      font-size: 12px;
+      color: var(--charcoal);
+      opacity: 0.6;
+      letter-spacing: 0.5px;
+    }
+    
+    /* Premium Feature Visual */
+    .feature-visual {
+      position: relative;
+      padding: 60px;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 
+        0 30px 60px rgba(0, 0, 0, 0.08),
+        0 10px 20px rgba(10, 186, 181, 0.1);
+      overflow: hidden;
+    }
+    
+    .feature-visual::before {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      background: linear-gradient(135deg, var(--tiffany-blue), var(--gold), var(--tiffany-dark));
+      border-radius: 20px;
+      opacity: 0.3;
+      z-index: -1;
+    }
+    
+    .feature-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    
+    .feature-card {
+      background: linear-gradient(135deg, var(--pearl) 0%, white 100%);
+      padding: 32px;
+      border-radius: 16px;
+      border: 1px solid rgba(10, 186, 181, 0.1);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .feature-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 60px;
+      height: 1px;
+      background: var(--gold);
+    }
+    
+    .feature-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px rgba(10, 186, 181, 0.15);
+      border-color: var(--tiffany-blue);
+    }
+    
+    .feature-label {
+      font-size: 10px;
+      font-weight: 600;
+      color: var(--tiffany-blue);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 8px;
+    }
+    
+    .feature-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 12px;
+      color: var(--charcoal);
+    }
+    
+    .feature-desc {
+      font-size: 13px;
+      color: var(--charcoal);
+      line-height: 1.6;
+      opacity: 0.8;
+    }
+    
+    /* Sections */
+    section {
+      padding: 100px 0;
+      position: relative;
+    }
+    
+    /* Challenge Section */
+    .challenges-section {
+      background: linear-gradient(135deg, var(--pearl) 0%, white 100%);
+      padding: 80px 0;
+      border-top: 1px solid rgba(10, 186, 181, 0.1);
+      border-bottom: 1px solid rgba(10, 186, 181, 0.1);
+    }
+    
+    .challenges-content {
+      text-align: center;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    
+    .challenges-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 42px;
+      font-weight: 400;
+      color: var(--charcoal);
+      margin-bottom: 60px;
+      position: relative;
+    }
+    
+    .challenges-title::after {
+      content: '';
+      position: absolute;
+      bottom: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 2px;
+      background: var(--tiffany-blue);
+    }
+    
+    .challenges-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+      margin-bottom: 60px;
+    }
+    
+    .challenge-card {
+      background: white;
+      padding: 40px 30px;
+      border-radius: 16px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+      border: 1px solid rgba(10, 186, 181, 0.1);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .challenge-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, var(--tiffany-blue), var(--tiffany-dark));
+      transform: scaleX(0);
+      transition: transform 0.3s;
+    }
+    
+    .challenge-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 40px rgba(10, 186, 181, 0.15);
+    }
+    
+    .challenge-card:hover::before {
+      transform: scaleX(1);
+    }
+    
+    .challenge-icon {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+    
+    .challenge-text {
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--charcoal);
+      line-height: 1.6;
+    }
+    
+    .challenges-solution {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      background: white;
+      padding: 40px 50px;
+      border-radius: 20px;
+      box-shadow: 0 15px 50px rgba(10, 186, 181, 0.1);
+      border: 2px solid var(--tiffany-light);
+      position: relative;
+      margin-top: 40px;
+    }
+    
+    .challenges-solution::before {
+      content: '';
+      position: absolute;
+      top: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 0;
+      border-left: 20px solid transparent;
+      border-right: 20px solid transparent;
+      border-bottom: 20px solid var(--tiffany-light);
+    }
+    
+    .solution-arrow {
+      font-size: 24px;
+    }
+    
+    .solution-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 24px;
+      font-weight: 400;
+      color: var(--charcoal);
+    }
+    
+    .solution-highlight {
+      color: var(--tiffany-blue);
+      font-weight: 600;
+      background: linear-gradient(135deg, var(--tiffany-blue), var(--tiffany-dark));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    /* Features Section */
+    .features-section {
+      padding: 100px 0;
+      background: white;
+    }
+    
+    .features-content {
+      text-align: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+      margin-top: 60px;
+    }
+    
+    .feature-item {
+      background: linear-gradient(135deg, var(--pearl) 0%, white 100%);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+      border: 1px solid rgba(10, 186, 181, 0.1);
+      position: relative;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      text-align: left;
+    }
+    
+    .feature-item:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 25px 60px rgba(10, 186, 181, 0.15);
+      border-color: var(--tiffany-blue);
+    }
+    
+    .feature-number {
+      position: absolute;
+      top: -15px;
+      left: 30px;
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, var(--tiffany-blue), var(--tiffany-dark));
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 24px;
+      font-weight: 600;
+      box-shadow: 0 8px 20px rgba(10, 186, 181, 0.3);
+    }
+    
+    .feature-number::after {
+      content: '';
+      position: absolute;
+      inset: -3px;
+      border: 2px solid var(--gold);
+      border-radius: 50%;
+      opacity: 0.6;
+    }
+    
+    .feature-content {
+      padding-top: 30px;
+    }
+    
+    .feature-content h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 24px;
+      font-weight: 600;
+      color: var(--charcoal);
+      margin-bottom: 20px;
+      line-height: 1.3;
+    }
+    
+    .feature-points {
+      list-style: none;
+      margin: 20px 0;
+      padding-left: 0;
+    }
+    
+    .feature-points li {
+      padding: 8px 0;
+      padding-left: 24px;
+      position: relative;
+      font-size: 15px;
+      color: var(--charcoal);
+      line-height: 1.6;
+    }
+    
+    .feature-points li::before {
+      content: '◆';
+      position: absolute;
+      left: 0;
+      color: var(--tiffany-blue);
+      font-size: 12px;
+    }
+    
+    .feature-highlight {
+      margin-top: 20px;
+      padding: 16px 20px;
+      background: var(--tiffany-light);
+      border-radius: 12px;
+      border-left: 4px solid var(--tiffany-blue);
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--tiffany-dark);
+      font-style: italic;
+      position: relative;
+    }
+    
+    .feature-highlight::before {
+      content: '👉';
+      position: absolute;
+      left: -12px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 16px;
+      background: white;
+      padding: 4px;
+      border-radius: 50%;
+      box-shadow: 0 2px 8px rgba(10, 186, 181, 0.2);
+    }
+    
+    .section-label {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--tiffany-blue);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin-bottom: 16px;
+      display: block;
+    }
+    
+    h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 48px;
+      font-weight: 300;
+      margin-bottom: 24px;
+      letter-spacing: -0.5px;
+    }
+    
+    .section-desc {
+      font-size: 18px;
+      color: var(--charcoal);
+      margin-bottom: 60px;
+      max-width: 700px;
+      line-height: 1.8;
+      opacity: 0.9;
+    }
+    
+    /* Difference Section - Premium */
+    .diff-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+    
+    .diff-header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    
+    /* Comparison Table */
+    .comparison-container {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+    
+    .comparison-table {
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+      border: 1px solid rgba(10, 186, 181, 0.1);
+    }
+    
+    .comparison-header {
+      display: grid;
+      grid-template-columns: 150px 0.6fr 1fr;
+      background: linear-gradient(135deg, var(--charcoal), #34495e);
+      color: white;
+    }
+    
+    .comparison-header > div {
+      padding: 16px 12px;
+      font-weight: 600;
+      text-align: center;
+      font-size: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    
+    .comparison-header .comparison-item-label {
+      background: var(--charcoal);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 16px;
+    }
+    
+    .comparison-header .comparison-other {
+      background: #95a5a6;
+      color: white;
+      position: relative;
+    }
+    
+    .comparison-header .comparison-other::before {
+      content: '😐';
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      font-size: 14px;
+    }
+    
+    .comparison-header .comparison-fomus {
+      background: linear-gradient(135deg, var(--tiffany-blue), var(--tiffany-dark));
+      color: white;
+      position: relative;
+      font-weight: 700;
+    }
+    
+    
+    .comparison-row {
+      display: grid;
+      grid-template-columns: 150px 0.6fr 1fr;
+      border-bottom: 1px solid rgba(10, 186, 181, 0.1);
+      transition: background-color 0.3s;
+    }
+    
+    .comparison-row:hover {
+      background: rgba(10, 186, 181, 0.02);
+    }
+    
+    .comparison-row:last-child {
+      border-bottom: none;
+    }
+    
+    .comparison-row > div {
+      padding: 16px 12px;
+      font-size: 14px;
+      line-height: 1.5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    
+    .comparison-row .comparison-item-label {
+      background: linear-gradient(135deg, var(--pearl), #f1f5f9);
+      font-weight: 700;
+      color: var(--charcoal);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 14px;
+      border-right: 2px solid rgba(10, 186, 181, 0.1);
+    }
+    
+    .comparison-row .comparison-other {
+      color: #666;
+      background: #f8f9fa;
+      font-weight: 400;
+      position: relative;
+      border-right: 1px solid rgba(0, 0, 0, 0.05);
+    }
+    
+    
+    .comparison-row .comparison-fomus {
+      background: linear-gradient(135deg, var(--tiffany-light), #e0f7f6);
+      color: var(--tiffany-dark);
+      font-weight: 600;
+      position: relative;
+      border-left: 4px solid var(--tiffany-blue);
+    }
+    
+    .comparison-row .comparison-fomus::before {
+      content: '✓';
+      position: absolute;
+      right: 12px;
+      top: 12px;
+      color: var(--tiffany-blue);
+      font-weight: bold;
+      font-size: 18px;
+      background: white;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 8px rgba(10, 186, 181, 0.3);
+    }
+    
+    /* Emphasis Points */
+    .emphasis-points {
+      display: grid;
+      gap: 20px;
+    }
+    
+    .emphasis-card {
+      background: white;
+      padding: 32px;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+      border: 1px solid rgba(10, 186, 181, 0.1);
+      position: relative;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .emphasis-card::before {
+      content: '"';
+      position: absolute;
+      top: 12px;
+      left: 20px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 48px;
+      color: var(--tiffany-blue);
+      opacity: 0.2;
+    }
+    
+    .emphasis-card.featured {
+      background: linear-gradient(135deg, var(--tiffany-blue), var(--tiffany-dark));
+      color: white;
+      transform: scale(1.05);
+      box-shadow: 0 20px 40px rgba(10, 186, 181, 0.3);
+    }
+    
+    .emphasis-card.featured::before {
+      color: white;
+      opacity: 0.3;
+    }
+    
+    .emphasis-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 15px 40px rgba(10, 186, 181, 0.2);
+    }
+    
+    .emphasis-card.featured:hover {
+      transform: scale(1.05) translateY(-4px);
+    }
+    
+    .emphasis-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      line-height: 1.6;
+      text-align: center;
+      font-style: italic;
+      padding-left: 20px;
+    }
+    
+    /* Pricing Plans - Luxury */
+    .plans-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      margin-bottom: 40px;
+    }
+    
+    .plan-card {
+      background: white;
+      border-radius: 20px;
+      padding: 32px;
+      position: relative;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      border: 1px solid rgba(10, 186, 181, 0.1);
+      overflow: hidden;
+    }
+    
+    .plan-card::before {
+      content: '';
+      position: absolute;
+      top: -100%;
+      left: -100%;
+      width: 300%;
+      height: 300%;
+      background: radial-gradient(circle, rgba(10, 186, 181, 0.03) 0%, transparent 70%);
+      transition: all 0.6s;
+    }
+    
+    .plan-card:hover::before {
+      top: -150%;
+      left: -150%;
+    }
+    
+    .plan-card.featured {
+      border-color: var(--gold);
+      box-shadow: 0 20px 60px rgba(212, 175, 55, 0.15);
+    }
+    
+    .plan-card.featured::after {
+      content: 'PREMIUM';
+      position: absolute;
+      top: 32px;
+      right: -30px;
+      background: var(--gold);
+      color: white;
+      padding: 4px 40px;
+      font-size: 10px;
+      letter-spacing: 2px;
+      transform: rotate(45deg);
+    }
+    
+    .plan-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 30px 70px rgba(10, 186, 181, 0.2);
+    }
+    
+    .plan-header {
+      margin-bottom: 40px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid rgba(10, 186, 181, 0.1);
+    }
+    
+    .plan-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 26px;
+      font-weight: 400;
+      margin-bottom: 10px;
+      color: var(--charcoal);
+    }
+    
+    .plan-highlight {
+      font-size: 14px;
+      color: var(--tiffany-blue);
+      line-height: 1.6;
+    }
+    
+    .price-display {
+      margin: 20px 0;
+      text-align: center;
+    }
+    
+    .price-label {
+      font-size: 11px;
+      color: var(--charcoal);
+      opacity: 0.6;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+    
+    .price-amount {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 48px;
+      font-weight: 300;
+      color: var(--tiffany-blue);
+      line-height: 1;
+    }
+    
+    .price-amount span {
+      font-size: 24px;
+      opacity: 0.7;
+    }
+    
+    .plan-features {
+      list-style: none;
+      margin: 24px 0;
+    }
+    
+    .plan-features li {
+      padding: 12px 0;
+      padding-left: 28px;
+      position: relative;
+      font-size: 13px;
+      color: var(--charcoal);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      line-height: 1.5;
+    }
+    
+    .plan-features li:last-child {
+      border-bottom: none;
+    }
+    
+    .plan-features li::before {
+      content: '◆';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+      font-size: 10px;
+    }
+    
+    /* Subsidy Box - Elegant */
+    .subsidy-box {
+      background: linear-gradient(135deg, var(--tiffany-light) 0%, var(--pearl) 100%);
+      padding: 32px;
+      border-radius: 16px;
+      margin: 32px 0;
+      border: 1px solid rgba(10, 186, 181, 0.2);
+    }
+    
+    .subsidy-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 0;
+      font-size: 15px;
+    }
+    
+    .subsidy-divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--tiffany-blue), transparent);
+      margin: 20px 0;
+    }
+    
+    .subsidy-green {
+      color: var(--tiffany-dark);
+      font-weight: 600;
+      font-size: 18px;
+    }
+    
+    .subsidy-total {
+      font-size: 24px;
+      font-weight: 600;
+      color: var(--charcoal);
+    }
+    
+    .subsidy-note {
+      font-size: 11px;
+      color: var(--charcoal);
+      opacity: 0.7;
+      margin-top: 20px;
+      line-height: 1.6;
+      padding: 16px;
+      background: rgba(255, 255, 255, 0.5);
+      border-radius: 8px;
+    }
+    
+    /* Curriculum - Premium Layout */
+    .curriculum-container {
+      background: white;
+      border-radius: 24px;
+      padding: 60px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+      margin-top: 40px;
+    }
+    
+    .curriculum-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 24px;
+      margin-top: 40px;
+    }
+    
+    .day-card {
+      text-align: center;
+      padding: 40px 20px;
+      background: linear-gradient(135deg, var(--pearl) 0%, white 100%);
+      border-radius: 16px;
+      border: 1px solid rgba(10, 186, 181, 0.1);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+    }
+    
+    .day-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 40px;
+      height: 2px;
+      background: var(--gold);
+    }
+    
+    .day-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(10, 186, 181, 0.15);
+      background: var(--tiffany-light);
+    }
+    
+    .day-number {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      background: var(--tiffany-blue);
+      color: white;
+      border-radius: 50%;
+      font-weight: 600;
+      margin-bottom: 16px;
+      font-size: 16px;
+    }
+    
+    .day-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--charcoal);
+      margin-bottom: 12px;
+    }
+    
+    .day-content {
+      font-size: 13px;
+      color: var(--charcoal);
+      line-height: 1.6;
+      opacity: 0.8;
+    }
+    
+    /* Instructor - Executive Style */
+    .instructor-section {
+      background: linear-gradient(135deg, var(--pearl) 0%, white 100%);
+      padding: 100px 0;
+    }
+    
+    .instructor-grid {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 60px;
+      align-items: center;
+    }
+    
+    .instructor-image {
+      position: relative;
+      padding: 20px;
+    }
+    
+    .instructor-image-inner {
+      aspect-ratio: 1;
+      background: linear-gradient(135deg, var(--tiffany-blue), var(--tiffany-dark));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 120px;
+      color: white;
+      box-shadow: 0 30px 60px rgba(10, 186, 181, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .instructor-image-inner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+    
+    .instructor-image-inner::after {
+      content: '';
+      position: absolute;
+      inset: -20px;
+      border: 2px solid var(--gold);
+      border-radius: 50%;
+      opacity: 0.3;
+    }
+    
+    .instructor-content h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 36px;
+      font-weight: 400;
+      margin-bottom: 8px;
+      color: var(--charcoal);
+    }
+    
+    .instructor-title {
+      color: var(--tiffany-blue);
+      font-size: 14px;
+      letter-spacing: 1px;
+      margin-bottom: 32px;
+    }
+    
+    .instructor-list {
+      list-style: none;
+      margin: 32px 0;
+    }
+    
+    .instructor-list li {
+      padding: 16px 0;
+      padding-left: 32px;
+      position: relative;
+      color: var(--charcoal);
+      line-height: 1.8;
+      border-bottom: 1px solid rgba(10, 186, 181, 0.1);
+    }
+    
+    .instructor-list li:last-child {
+      border-bottom: none;
+    }
+    
+    .instructor-list li::before {
+      content: '◈';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+      font-size: 12px;
+    }
+    
+    .message-box {
+      background: white;
+      padding: 48px;
+      border-radius: 16px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+      margin-top: 40px;
+      position: relative;
+    }
+    
+    .message-box::before {
+      content: '"';
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 80px;
+      color: var(--tiffany-blue);
+      opacity: 0.2;
+    }
+    
+    .message-content {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      line-height: 1.8;
+      color: var(--charcoal);
+      font-style: italic;
+    }
+    
+    /* CTA - Luxury */
+    .cta-section {
+      background: linear-gradient(135deg, var(--tiffany-blue), var(--tiffany-dark));
+      padding: 100px 60px;
+      border-radius: 32px;
+      margin: 100px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+    }
+    
+    .cta-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .cta-section h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 48px;
+      font-weight: 300;
+      color: white;
+      margin-bottom: 24px;
+      line-height: 1.2;
+    }
+    
+    .cta-text {
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 16px;
+      line-height: 1.8;
+      margin-bottom: 32px;
+    }
+    
+    .cta-list {
+      list-style: none;
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 14px;
+    }
+    
+    .cta-list li {
+      padding: 12px 0;
+      padding-left: 28px;
+      position: relative;
+    }
+    
+    .cta-list li::before {
+      content: '✦';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+    }
+    
+    /* Form - Premium */
+    .contact-form {
+      display: grid;
+      gap: 20px;
+    }
+    
+    .form-input,
+    .form-textarea {
+      padding: 20px 24px;
+      border-radius: 50px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      font-size: 14px;
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      backdrop-filter: blur(10px);
+      transition: all 0.3s;
+    }
+    
+    .form-textarea {
+      border-radius: 24px;
+      resize: vertical;
+      min-height: 120px;
+      font-family: inherit;
+    }
+    
+    .form-input::placeholder,
+    .form-textarea::placeholder {
+      color: rgba(255, 255, 255, 0.6);
+    }
+    
+    .form-input:focus,
+    .form-textarea:focus {
+      outline: none;
+      background: rgba(255, 255, 255, 0.2);
+      border-color: rgba(255, 255, 255, 0.5);
+    }
+    
+    .form-submit {
+      padding: 20px 48px;
+      border-radius: 50px;
+      border: none;
+      background: white;
+      color: var(--tiffany-blue);
+      font-weight: 600;
+      font-size: 14px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.3s;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+    
+    .form-submit:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    }
+    
+    /* Footer - Minimal Luxury */
+    footer {
+      padding: 60px 0;
+      border-top: 1px solid rgba(10, 186, 181, 0.1);
+      background: var(--pearl);
+    }
+    
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      color: var(--charcoal);
+      opacity: 0.7;
+    }
+    
+    .footer-links {
+      display: flex;
+      gap: 40px;
+    }
+    
+    .footer-links a {
+      color: var(--charcoal);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    
+    .footer-links a:hover {
+      color: var(--tiffany-blue);
+    }
+    
+    /* Animations */
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+    
+    @keyframes shimmer {
+      0% { background-position: -1000px 0; }
+      100% { background-position: 1000px 0; }
+    }
+    
+    /* Mobile First Responsive - Optimized UX */
+    @media (max-width: 968px) {
+      .container {
+        padding: 0 16px;
+      }
+      
+      body {
+        font-size: 16px;
+        line-height: 1.6;
+      }
+      
+      nav {
+        display: none;
+      }
+      
+      .hero-grid,
+      .diff-header,
+      .plans-grid,
+      .instructor-grid,
+      .cta-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+      
+      /* Enhanced Mobile Typography */
+      h1 {
+        font-size: 28px !important;
+        line-height: 1.3 !important;
+        margin-bottom: 16px !important;
+      }
+      
+      h2 {
+        font-size: 24px !important;
+        line-height: 1.4 !important;
+        margin-bottom: 16px !important;
+      }
+      
+      h3 {
+        font-size: 20px !important;
+        line-height: 1.4 !important;
+        margin-bottom: 12px !important;
+      }
+      
+      .section-desc {
+        font-size: 16px !important;
+        line-height: 1.7 !important;
+        margin-bottom: 32px !important;
+      }
+      
+      /* Mobile Button Optimization */
+      .btn-luxury, .btn-outline-luxury {
+        padding: 16px 24px !important;
+        font-size: 16px !important;
+        min-height: 48px !important;
+        border-radius: 12px !important;
+        width: 100% !important;
+        text-align: center !important;
+        box-sizing: border-box !important;
+      }
+      
+      .curriculum-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      /* Challenge Section Mobile - Enhanced UX */
+      .challenges-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+      
+      .challenge-item {
+        padding: 20px 16px !important;
+        margin-bottom: 12px !important;
+        border-radius: 12px !important;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08) !important;
+      }
+      
+      .challenge-icon {
+        font-size: 24px !important;
+        margin-bottom: 12px !important;
+      }
+      
+      .challenge-text {
+        font-size: 15px !important;
+        line-height: 1.5 !important;
+        text-align: center !important;
+      }
+      
+      .challenges-title {
+        font-size: 28px !important;
+        text-align: center !important;
+        margin-bottom: 24px !important;
+      }
+      
+      .challenges-solution {
+        flex-direction: column;
+        padding: 24px 20px !important;
+        gap: 12px;
+        border-radius: 12px !important;
+        margin-top: 24px !important;
+      }
+      
+      .solution-arrow {
+        font-size: 28px !important;
+      }
+      
+      .solution-text {
+        font-size: 18px !important;
+        text-align: center !important;
+        line-height: 1.5 !important;
+      }
+      
+      .solution-highlight {
+        font-size: 19px !important;
+        font-weight: 700 !important;
+      }
+      
+      /* Features Section Mobile - Enhanced Readability */
+      .features-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+      
+      .feature-item {
+        padding: 24px 20px !important;
+        border-radius: 16px !important;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08) !important;
+        margin-bottom: 16px !important;
+      }
+      
+      .feature-number {
+        font-size: 36px !important;
+        margin-bottom: 16px !important;
+        text-align: center !important;
+      }
+      
+      .feature-content h3 {
+        font-size: 20px !important;
+        text-align: center !important;
+        margin-bottom: 16px !important;
+        line-height: 1.4 !important;
+      }
+      
+      .feature-points {
+        margin: 20px 0 !important;
+      }
+      
+      .feature-points li {
+        font-size: 15px !important;
+        line-height: 1.6 !important;
+        padding: 8px 0 !important;
+        margin-bottom: 8px !important;
+      }
+      
+      .feature-highlight {
+        font-size: 14px !important;
+        padding: 16px 20px !important;
+        border-radius: 12px !important;
+        line-height: 1.5 !important;
+        text-align: center !important;
+        margin-top: 16px !important;
+      }
+      
+      /* Comparison Table Mobile - Ultra Clear UX */
+      .diff-header {
+        text-align: center !important;
+        margin-bottom: 32px !important;
+      }
+      
+      .diff-header h2 {
+        font-size: 24px !important;
+        line-height: 1.3 !important;
+      }
+      
+      .comparison-container {
+        margin: 32px 0 !important;
+        border-radius: 16px !important;
+        overflow: hidden !important;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08) !important;
+      }
+      
+      .comparison-table {
+        border-radius: 16px !important;
+        overflow: hidden !important;
+      }
+      
+      .comparison-header,
+      .comparison-row {
+        display: block !important;
+        width: 100% !important;
+      }
+      
+      .comparison-header > div,
+      .comparison-row > div {
+        display: block !important;
+        width: 100% !important;
+        padding: 20px 20px !important;
+        text-align: center !important;
+        border-bottom: 1px solid rgba(10, 186, 181, 0.1) !important;
+        position: relative !important;
+        box-sizing: border-box !important;
+      }
+      
+      .comparison-header .comparison-item-label,
+      .comparison-row .comparison-item-label {
+        font-size: 18px !important;
+        font-weight: 700 !important;
+        background: var(--charcoal) !important;
+        color: white !important;
+        padding: 20px !important;
+        margin-bottom: 0 !important;
+        border-bottom: none !important;
+      }
+      
+      .comparison-header .comparison-other,
+      .comparison-row .comparison-other {
+        background: #f8f9fa !important;
+        border: none !important;
+        color: #666 !important;
+        font-size: 16px !important;
+        line-height: 1.6 !important;
+        padding: 20px !important;
+      }
+      
+      .comparison-header .comparison-fomus,
+      .comparison-row .comparison-fomus {
+        background: linear-gradient(135deg, var(--tiffany-light), #e0f7f6) !important;
+        border: none !important;
+        color: var(--tiffany-dark) !important;
+        font-size: 16px !important;
+        line-height: 1.6 !important;
+        font-weight: 600 !important;
+        padding: 20px !important;
+        border-bottom: none !important;
+      }
+      
+      
+      .comparison-header .comparison-fomus,
+      .comparison-row .comparison-fomus {
+        background: linear-gradient(135deg, var(--tiffany-light), #e0f7f6) !important;
+        border: none !important;
+        color: var(--tiffany-dark) !important;
+        border-left: 4px solid var(--tiffany-blue) !important;
+      }
+      
+      .comparison-row .comparison-fomus::before {
+        content: '✓ FOMUS' !important;
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(10, 186, 181, 0.1);
+        color: var(--tiffany-blue);
+        padding: 4px 8px;
+        border-radius: 12px;
+        font-size: 10px;
+        font-weight: bold;
+      }
+      
+      
+      .comparison-header .comparison-fomus,
+      .comparison-row .comparison-fomus {
+        background: linear-gradient(135deg, var(--tiffany-light), #e0f7f6) !important;
+        border-left: 4px solid var(--tiffany-blue) !important;
+        color: var(--tiffany-dark) !important;
+      }
+      
+      .comparison-header .comparison-fomus::before,
+      .comparison-row .comparison-fomus::before {
+        content: '✅ FOMUS: ';
+        position: static !important;
+        font-weight: bold;
+        color: var(--tiffany-blue) !important;
+        display: inline;
+        font-size: 14px;
+        background: none !important;
+        width: auto !important;
+        height: auto !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+      }
+      
+      .emphasis-quote {
+        font-size: 16px;
+        padding-left: 10px;
+      }
+      
+      h1 {
+        font-size: 40px;
+      }
+      
+      h2 {
+        font-size: 32px;
+      }
+      
+      .cta-section {
+        padding: 60px 40px;
+      
+      /* Mobile Pricing Plans - Enhanced UX */
+      .plans-grid {
+        gap: 20px !important;
+      }
+      
+      .plan-card {
+        padding: 24px 20px !important;
+        border-radius: 16px !important;
+        margin-bottom: 20px !important;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08) !important;
+      }
+      
+      .plan-name {
+        font-size: 22px !important;
+        text-align: center !important;
+        margin-bottom: 12px !important;
+        line-height: 1.3 !important;
+      }
+      
+      .plan-highlight {
+        font-size: 15px !important;
+        text-align: center !important;
+        line-height: 1.5 !important;
+        margin-bottom: 20px !important;
+      }
+      
+      .price-display {
+        margin: 20px 0 !important;
+        text-align: center !important;
+      }
+      
+      .price-amount {
+        font-size: 32px !important;
+      }
+      
+      .plan-features li {
+        font-size: 15px !important;
+        line-height: 1.6 !important;
+        padding: 12px 0 !important;
+        text-align: left !important;
+      }
+      
+      /* Mobile Instructor Section - Enhanced Readability */
+      .instructor-grid {
+        text-align: center !important;
+      }
+      
+      .instructor-image {
+        padding: 20px !important;
+        margin: 0 auto 24px auto !important;
+        max-width: 200px !important;
+      }
+      
+      .instructor-content h3 {
+        font-size: 22px !important;
+        text-align: center !important;
+        margin-bottom: 8px !important;
+      }
+      
+      .instructor-title {
+        text-align: center !important;
+        font-size: 16px !important;
+        margin-bottom: 24px !important;
+      }
+      
+      .instructor-content div[style*="font-size: 16px"] {
+        font-size: 16px !important;
+        line-height: 1.7 !important;
+        text-align: left !important;
+      }
+      
+      .instructor-content div[style*="font-size: 16px"] p {
+        margin-bottom: 16px !important;
+        text-align: left !important;
+      }
+      
+      /* Mobile CTA Section */
+      .cta-section {
+        padding: 48px 24px !important;
+        margin: 48px 0 !important;
+        border-radius: 20px !important;
+      }
+      
+      .cta-section h3 {
+        font-size: 24px !important;
+        text-align: center !important;
+        margin-bottom: 16px !important;
+        line-height: 1.3 !important;
+      }
+      
+      .cta-text {
+        font-size: 16px !important;
+        text-align: center !important;
+        line-height: 1.6 !important;
+        margin-bottom: 24px !important;
+      }
+      
+      .cta-list li {
+        font-size: 15px !important;
+        padding: 8px 0 !important;
+        text-align: center !important;
+      }
+      
+      .contact-form {
+        margin-top: 24px !important;
+      }
+      
+      .form-input, .form-textarea {
+        font-size: 16px !important;
+        padding: 16px 20px !important;
+        border-radius: 12px !important;
+        margin-bottom: 16px !important;
+      }
+      
+      .form-submit {
+        font-size: 16px !important;
+        padding: 16px 24px !important;
+        border-radius: 12px !important;
+        width: 100% !important;
+        min-height: 48px !important;
+      }
+      
+      /* Mobile Section Spacing */
+      section {
+        padding: 48px 0 !important;
+      }
+      
+      .section-label {
+        font-size: 14px !important;
+        margin-bottom: 8px !important;
+        text-align: center !important;
+      }
+      
+      /* Mobile Footer */
+      footer {
+        padding: 32px 0 !important;
+        text-align: center !important;
+      }
+      
+      .footer-content {
+        flex-direction: column !important;
+        gap: 16px !important;
+        text-align: center !important;
+      }
+      
+      .footer-links {
+        justify-content: center !important;
+        gap: 24px !important;
+      }
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Premium Header -->
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <div class="logo">
+          <div class="logo-icon">F</div>
+          <div class="logo-text">FOMUS <span>中小企業向け 実践型AI研修</span></div>
+        </div>
+        <nav>
+          <a href="#hero">トップ</a>
+          <a href="#difference">他社との違い</a>
+          <a href="#plans">プラン</a>
+          <a href="#curriculum">カリキュラム</a>
+          <a href="#instructor">講師</a>
+          <a href="#contact">お問い合わせ</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero" class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div>
+          <span class="section-label">中小企業経営者向けAI研修</span>
+          <h1>
+            <span class="luxury-accent">AIで経営改善｜</span>中小企業のための<br>
+            <span class="subtitle">実践型AI研修 by FOMUS</span>
+          </h1>
+          <p class="hero-text">
+            中小企業向け・実践7割の短期集中。ChatGPT・Gemini・画像/音楽生成まで幅広く体験し、翌日から業務に使える状態へ。
+          </p>
+          <div class="button-group">
+            <a href="#plans" class="btn-luxury">プランを見る</a>
+            <a href="#contact" class="btn-outline-luxury">助成金について</a>
+          </div>
+          <p class="small-text">講義3割 / 実践7割・2h×5回（合計10時間）</p>
+        </div>
+        <div>
+          <div class="feature-visual">
+            <div class="feature-grid">
+              <div class="feature-card">
+                <div class="feature-label">TEXT</div>
+                <div class="feature-title">ChatGPT / Gemini</div>
+                <p class="feature-desc">要約・企画・翻訳・議事録… 明日から使える業務ユース。</p>
+              </div>
+              <div class="feature-card">
+                <div class="feature-label">IMAGE</div>
+                <div class="feature-title">MidJourney</div>
+                <p class="feature-desc">資料やSNSのビジュアルを高速生成。プロンプトで表現力を鍛える。</p>
+              </div>
+              <div class="feature-card">
+                <div class="feature-label">AUDIO</div>
+                <div class="feature-title">SUNO</div>
+                <p class="feature-desc">音楽生成で"言語→非言語"の指示力を体得。BGM活用も。</p>
+              </div>
+              <div class="feature-card">
+                <div class="feature-label">CUSTOM</div>
+                <div class="feature-title">Day5 カスタム</div>
+                <p class="feature-desc">希望テーマに合わせて最適化。社内導入の道筋を作る。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Challenge Section -->
+  <section id="challenges" class="challenges-section">
+    <div class="container">
+      <div class="challenges-content">
+        <h2 class="challenges-title">こんな課題はありませんか？</h2>
+        
+        <div class="challenges-grid">
+          <div class="challenge-card">
+            <div class="challenge-icon">📄</div>
+            <div class="challenge-text">書類作成や事務に時間がかかる</div>
+          </div>
+          <div class="challenge-card">
+            <div class="challenge-icon">💡</div>
+            <div class="challenge-text">提案やアイデアがマンネリ化している</div>
+          </div>
+          <div class="challenge-card">
+            <div class="challenge-icon">📱</div>
+            <div class="challenge-text">SNSやWeb発信にリソースを割けない</div>
+          </div>
+          <div class="challenge-card">
+            <div class="challenge-icon">👨‍💻</div>
+            <div class="challenge-text">IT人材がいなくてAI導入が進まない</div>
+          </div>
+        </div>
+        
+        <div class="challenges-solution">
+          <div class="solution-arrow">👉</div>
+          <div class="solution-text">これらはすべて、<span class="solution-highlight">AIで改善できます。</span></div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 20px; font-size: 14px; color: var(--charcoal); opacity: 0.7;">
+          ※このホームページもAIを活用して制作しました。
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features" class="features-section">
+    <div class="container">
+      <div class="features-content">
+        <span class="section-label">なぜFOMUSなのか</span>
+        <h2>FOMUSのAI研修<span class="luxury-accent">４つの特徴</span></h2>
+        <p class="section-desc">他社とは一線を画す、経営改善に直結するAI研修プログラム</p>
+        
+        <div class="features-grid">
+          <div class="feature-item">
+            <div class="feature-number">01</div>
+            <div class="feature-content">
+              <h3>経営改善に直結するAI活用</h3>
+              <ul class="feature-points">
+                <li>見積書・契約書の下書き</li>
+                <li>企画書や提案資料のスピードアップ</li>
+                <li>SNS・Web集客の効率化</li>
+              </ul>
+              <div class="feature-highlight">経営成果に繋がる研修</div>
+            </div>
+          </div>
+          
+          <div class="feature-item">
+            <div class="feature-number">02</div>
+            <div class="feature-content">
+              <h3>楽しいから浸透する</h3>
+              <ul class="feature-points">
+                <li>画像AI（MidJourney）、音楽AI（SUNO）も体験</li>
+                <li>遊び感覚 → 好きになる → 自走する</li>
+              </ul>
+              <div class="feature-highlight">他社にはない「楽しい要素」があるから、参加者が積極的に学ぶ</div>
+            </div>
+          </div>
+          
+          <div class="feature-item">
+            <div class="feature-number">03</div>
+            <div class="feature-content">
+              <h3>初心者に寄り添う講師</h3>
+              <ul class="feature-points">
+                <li>現在進行形でAIを活用しながら事業拡大している講師</li>
+                <li>初心者のつまづきポイントを理解し、やさしい言葉で説明</li>
+              </ul>
+              <div class="feature-highlight">「社員がついていけない心配がない」安心感</div>
+            </div>
+          </div>
+          
+          <div class="feature-item">
+            <div class="feature-number">04</div>
+            <div class="feature-content">
+              <h3>助成金対応で実質負担が小さい</h3>
+              <ul class="feature-points">
+                <li>人材開発支援助成金（リスキリング支援コース）対象</li>
+                <li>中小企業は 最大75%補助／上限30万円</li>
+                <li>「20万→実質5万」「40万→実質10万」</li>
+              </ul>
+              <div class="feature-highlight">従業員を抱える経営者にもメリット大</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Excellence Section -->
+  <section id="difference">
+    <div class="container">
+      <div class="diff-grid">
+        <div class="diff-header">
+          <div>
+            <span class="section-label">他社との違い</span>
+            <h2>他社のGPT研修と、<br><span class="luxury-accent">FOMUSの違い</span></h2>
+          </div>
+          <div>
+            <p class="section-desc">
+              GPTの"使い方講義"で終わらない。FOMUSは、文章・画像・音楽まで横断し「楽しい」から始めて「経営改善」に結びつけます。
+            </p>
+          </div>
+        </div>
+        <div class="comparison-container">
+          <div class="comparison-table">
+            <div class="comparison-header">
+              <div class="comparison-item-label">項目</div>
+              <div class="comparison-other">他社AI研修</div>
+              <div class="comparison-fomus">FOMUS AI研修</div>
+            </div>
+            
+            <div class="comparison-row">
+              <div class="comparison-item-label">学びの対象</div>
+              <div class="comparison-other">GPT操作中心（文章生成）</div>
+              <div class="comparison-fomus">GPT・Gemini・画像・音楽まで幅広く体験</div>
+            </div>
+            
+            <div class="comparison-row">
+              <div class="comparison-item-label">雰囲気</div>
+              <div class="comparison-other">ビジネス特化で堅苦しい</div>
+              <div class="comparison-fomus">楽しく学んで"AIが好き"になる設計</div>
+            </div>
+            
+            <div class="comparison-row">
+              <div class="comparison-item-label">スタイル</div>
+              <div class="comparison-other">講義中心（知識提供型）</div>
+              <div class="comparison-fomus">講義3割×実践7割（遊び感覚→業務応用）</div>
+            </div>
+            
+            <div class="comparison-row">
+              <div class="comparison-item-label">講師</div>
+              <div class="comparison-other">IT専門家やコンサル（敷居高い）</div>
+              <div class="comparison-fomus">実際にAIを活用し、ビジネスに転用している経営者が教える</div>
+            </div>
+            
+            <div class="comparison-row">
+              <div class="comparison-item-label">経営効果</div>
+              <div class="comparison-other">知識理解にとどまることも多い</div>
+              <div class="comparison-fomus">経営改善に直結（業務効率・企画力・顧客対応UP）</div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Investment Plans -->
+  <section id="plans">
+    <div class="container">
+      <span class="section-label">料金プラン</span>
+      <h2>料金プラン（単発・10時間）</h2>
+      <p class="section-desc">講義3割 / 実践7割。2時間×5回の短期集中プログラム。</p>
+      
+      <div class="plans-grid">
+        <div class="plan-card">
+          <div class="plan-header">
+            <div class="plan-name">AI活用プラン（初心者向け）</div>
+            <div class="plan-highlight">まずは"AIって楽しい！"を体験 → 業務に定着</div>
+          </div>
+          
+          <div class="price-display">
+            <div class="price-label">定価（税抜）</div>
+            <div class="price-amount"><span>¥</span>200,000</div>
+          </div>
+          
+          <ul class="plan-features">
+            <li>ChatGPTで文章要約・翻訳・企画作成</li>
+            <li>画像生成AIでクリエイティブ活用</li>
+            <li>MidJourneyで画像生成（Discord）</li>
+            <li>SUNOで音楽生成（プロンプト思考の体得）</li>
+            <li>Day5は自社の希望テーマにカスタマイズ</li>
+          </ul>
+          
+          <div class="subsidy-box">
+            <div class="subsidy-row">
+              <span>定価（税抜）</span>
+              <strong>¥200,000</strong>
+            </div>
+            <div class="subsidy-row">
+              <span>助成金（中小企業 75%／上限30万円）</span>
+              <span class="subsidy-green">▲¥150,000</span>
+            </div>
+            <div class="subsidy-divider"></div>
+            <div class="subsidy-row">
+              <strong>実質負担目安（税抜）</strong>
+              <strong class="subsidy-total">¥50,000</strong>
+            </div>
+            <p class="subsidy-note">
+              ※ 人材開発支援助成金〈事業展開等リスキリング支援コース〉の想定。実際の支給額は要件・審査により異なります。申請は企業側、FOMUSは必要資料を提供します。
+            </p>
+          </div>
+          
+          <div style="text-align: center; margin-top: 32px;">
+            <a href="#contact" class="btn-outline-luxury">相談する</a>
+          </div>
+        </div>
+        
+        <div class="plan-card featured">
+          <div class="plan-header">
+            <div class="plan-name">AIコーディングプラン（Vibe Coding）</div>
+            <div class="plan-highlight">Claude CodeとGPTを活用してホームページ作成などを学ぶコース</div>
+          </div>
+          
+          <div class="price-display">
+            <div class="price-label">定価（税抜）</div>
+            <div class="price-amount"><span>¥</span>400,000</div>
+          </div>
+          
+          <ul class="plan-features">
+            <li>Claude Code基礎操作・実践</li>
+            <li>ChatGPTを活用した開発</li>
+            <li>ホームページ・Webサイト制作</li>
+            <li>SEO対策・マーケティング活用</li>
+            <li>業務自動化ワークフロー構築</li>
+          </ul>
+          
+          <div class="subsidy-box">
+            <div class="subsidy-row">
+              <span>定価（税抜）</span>
+              <strong>¥400,000</strong>
+            </div>
+            <div class="subsidy-row">
+              <span>助成金（中小企業 75%／上限30万円）</span>
+              <span class="subsidy-green">▲¥300,000</span>
+            </div>
+            <div class="subsidy-divider"></div>
+            <div class="subsidy-row">
+              <strong>実質負担目安（税抜）</strong>
+              <strong class="subsidy-total">¥100,000</strong>
+            </div>
+            <p class="subsidy-note">
+              ※ 人材開発支援助成金〈事業展開等リスキリング支援コース〉の想定。実際の支給額は要件・審査により異なります。申請は企業側、FOMUSは必要資料を提供します。
+            </p>
+          </div>
+          
+          <div style="text-align: center; margin-top: 32px;">
+            <a href="#contact" class="btn-luxury">相談する</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Curriculum -->
+  <section id="curriculum">
+    <div class="container">
+      <span class="section-label">カリキュラム</span>
+      <h2>カリキュラム（幅広くAIを触るプラン）</h2>
+      <p class="section-desc">2h×5回 / 10時間。各回: 講義30–40分 + 実践60–90分。</p>
+      
+      <div class="curriculum-container">
+        <div class="curriculum-grid">
+          <div class="day-card">
+            <div class="day-number">1</div>
+            <div class="day-title">ChatGPT</div>
+            <div class="day-content">
+              基本操作と業務活用。要約・翻訳・メール下書き・議事録。
+            </div>
+          </div>
+          <div class="day-card">
+            <div class="day-number">2</div>
+            <div class="day-title">MidJourney</div>
+            <div class="day-content">
+              画像生成でプロンプト設計を体感。資料・SNSのビジュアル強化。
+            </div>
+          </div>
+          <div class="day-card">
+            <div class="day-number">3</div>
+            <div class="day-title">ChatGPT・Gemini</div>
+            <div class="day-content">
+              同一課題で出力比較→得意分野の見極め。業務への当てはめ。
+            </div>
+          </div>
+          <div class="day-card">
+            <div class="day-number">4</div>
+            <div class="day-title">SUNO</div>
+            <div class="day-content">
+              音楽生成で"言語→非言語"の指示を学ぶ。ブランディング/BGM応用。
+            </div>
+          </div>
+          <div class="day-card">
+            <div class="day-number">5</div>
+            <div class="day-title">希望に沿った内容</div>
+            <div class="day-content">
+              各社の要望に合わせてカスタム。導入ロードマップと発表。
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Instructor -->
+  <section id="instructor" class="instructor-section">
+    <div class="container">
+      <div class="instructor-grid">
+        <div class="instructor-image">
+          <div class="instructor-image-inner">
+            <img src="プロフィール.png" alt="増尾 圭亮（まっすー）" />
+          </div>
+        </div>
+        <div class="instructor-content">
+          <span class="section-label">講師</span>
+          <h3>増尾 圭亮（まっすー）</h3>
+          <p class="instructor-title">FOMUS代表</p>
+          
+          <div style="line-height: 1.8; color: var(--charcoal); margin: 32px 0; font-size: 16px;">
+            <p style="margin-bottom: 20px;">アイルランドの城に拠点を構えながら、AI活用の発信と研修を提供。</p>
+            
+            <p style="margin-bottom: 20px;">日本とドバイに法人を持ち、日本の伝統工芸「枡」のブランドを運営するなど、文化 × テクノロジー × 経営を組み合わせたプロジェクトを実践しています。</p>
+            
+            <p style="margin-bottom: 20px;">2022年に画像生成AIを独学で学び始め、現在は自らの事業全体に生成AIをフル活用。商品開発からマーケティング、海外展開まで、現場で実際に成果を出してきた経験をもとに研修を行います。</p>
+            
+            <p style="margin-bottom: 20px;">AI活用を実施したことで、ドバイ政府のスタートアップ支援プログラムに参画し、投資ファンドからの資金調達にも成功。</p>
+            
+            <p style="margin-bottom: 20px;">「ただAIを教える講師」ではなく、経営にAIを活かし実績を出している実践者だからこそ、体験談に基づいたリアルな学びを提供できます。</p>
+            
+            <p style="margin-bottom: 0;">AIの専門エンジニアではないからこそ、初心者の目線でわかりやすく伴走できるのが強みです。難しい言葉を使わず、現場に浸透する研修を設計。さらに高度なクリエイティブ活用にも対応可能です。</p>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="contact">
+    <div class="container">
+      <div class="cta-section">
+        <div class="cta-grid">
+          <div>
+            <h3>まずはご相談ください<br>（1名からOK）</h3>
+            <p class="cta-text">
+              受講人数・ご希望日程をお知らせください。助成金の活用についてもご案内します。
+            </p>
+            <ul class="cta-list">
+              <li>対象: 中小企業・各業界の非IT人材〜管理職</li>
+              <li>所要: 2h×5回 / 合計10時間（講義3割・実践7割）</li>
+              <li>場所: オンラインのみ</li>
+            </ul>
+          </div>
+          <form class="contact-form" id="contactForm">
+            <input type="text" class="form-input" name="company" placeholder="御社名" required>
+            <input type="text" class="form-input" name="name" placeholder="ご担当者名" required>
+            <input type="email" class="form-input" name="email" placeholder="メールアドレス" required>
+            <textarea class="form-textarea" name="message" placeholder="ご相談内容（受講人数/希望時期 など）" required></textarea>
+            <button type="submit" class="form-submit">お問い合わせを送信</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div>© 2025 FOMUS. All rights reserved.</div>
+        <div class="footer-right">人材開発支援助成金の制度は変更される場合があります。最新情報は公式要領をご確認ください。</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Smooth scroll with easing
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          const offsetTop = target.offsetTop - 100;
+          window.scrollTo({
+            top: offsetTop,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+
+    // Header background on scroll
+    window.addEventListener('scroll', () => {
+      const header = document.querySelector('header');
+      if (window.scrollY > 50) {
+        header.style.background = 'rgba(255, 255, 255, 0.98)';
+        header.style.boxShadow = '0 4px 30px rgba(10, 186, 181, 0.1)';
+      } else {
+        header.style.background = 'rgba(255, 255, 255, 0.95)';
+        header.style.boxShadow = '0 2px 30px rgba(10, 186, 181, 0.08)';
+      }
+    });
+
+    // Form interaction with EmailJS
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const formData = new FormData(this);
+      const company = formData.get('company');
+      const name = formData.get('name');
+      const email = formData.get('email');
+      const message = formData.get('message');
+      
+      // Create email content
+      const emailBody = `
+新規お問い合わせ
+
+会社名: ${company}
+担当者名: ${name}
+メールアドレス: ${email}
+
+ご相談内容:
+${message}
+
+送信日時: ${new Date().toLocaleString('ja-JP')}
+      `;
+      
+      // Use mailto link for now (can be replaced with proper email service later)
+      const mailtoLink = `mailto:fomus.official@gmail.com?subject=【FOMUS AI研修】お問い合わせ - ${company}&body=${encodeURIComponent(emailBody)}`;
+      
+      // Create temporary link and click it
+      const tempLink = document.createElement('a');
+      tempLink.href = mailtoLink;
+      tempLink.click();
+      
+      // Show confirmation
+      alert('メーラーが開きます。送信を完了してください。');
+      
+      // Reset form
+      this.reset();
+    });
+
+    // Parallax effect for hero
+    window.addEventListener('scroll', () => {
+      const scrolled = window.pageYOffset;
+      const parallax = document.querySelector('.hero');
+      parallax.style.transform = `translateY(${scrolled * 0.3}px)`;
+    });
+  </script>
+</body>
+</html>
