@@ -1835,11 +1835,31 @@
         gap: 16px;
       }
       
-      .challenge-item {
-        padding: 20px 16px !important;
-        margin-bottom: 12px !important;
+      .challenge-card {
+        padding: 24px 20px !important;
+        margin-bottom: 16px !important;
         border-radius: 12px !important;
         box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08) !important;
+        text-align: center !important;
+        min-height: 140px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+        position: relative !important;
+        overflow: hidden !important;
+      }
+
+      .challenge-card::before {
+        content: '' !important;
+        position: absolute !important;
+        top: 0 !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        width: 40px !important;
+        height: 3px !important;
+        background: linear-gradient(90deg, var(--tiffany-blue), var(--tiffany-dark)) !important;
+        border-radius: 0 0 2px 2px !important;
       }
       
       .challenge-icon {
