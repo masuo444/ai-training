@@ -260,16 +260,33 @@
     }
     
     .logo-text {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Montserrat', sans-serif;
       font-size: 24px;
-      font-weight: 400;
-      letter-spacing: 2px;
+      font-weight: 700;
+      letter-spacing: 1px;
       color: var(--charcoal);
     }
     
     .logo-text span {
       color: var(--tiffany-blue);
-      font-weight: 600;
+      font-weight: 500;
+      font-size: 22px;
+    }
+    
+    /* Mobile header optimization */
+    @media (max-width: 968px) {
+      .logo-text {
+        font-size: 14px !important;
+        font-weight: 600 !important;
+        line-height: 1.2 !important;
+        letter-spacing: 0.5px !important;
+      }
+      
+      .logo-text span {
+        font-size: 12px !important;
+        font-weight: 500 !important;
+        display: inline !important;
+      }
     }
     
     nav {
@@ -1025,7 +1042,7 @@
     }
     
     .comparison-header .comparison-other::before {
-      content: '😐';
+      content: '';
       position: absolute;
       top: 8px;
       right: 8px;
@@ -1695,6 +1712,25 @@
       100% { background-position: 1000px 0; }
     }
     
+    @keyframes gradientShift {
+      0%, 100% { 
+        background-position: 0% 50%; 
+        filter: brightness(1);
+      }
+      25% { 
+        background-position: 100% 50%; 
+        filter: brightness(1.1);
+      }
+      50% { 
+        background-position: 200% 50%; 
+        filter: brightness(1.2);
+      }
+      75% { 
+        background-position: 100% 50%; 
+        filter: brightness(1.1);
+      }
+    }
+    
     /* Mobile First Responsive - Optimized UX */
     @media (max-width: 968px) {
       .container {
@@ -1956,6 +1992,10 @@
         line-height: 1.5 !important;
       }
       
+      .comparison-other::before {
+        content: none !important;
+      }
+      
       .comparison-fomus {
         background: linear-gradient(135deg, var(--tiffany-light), #e0f7f6) !important;
         color: var(--tiffany-dark) !important;
@@ -1964,6 +2004,10 @@
         font-size: 13px !important;
         line-height: 1.5 !important;
         border-left: 3px solid var(--tiffany-blue) !important;
+      }
+      
+      .comparison-fomus::before {
+        content: none !important;
       }
       
       .comparison-mobile {
@@ -2157,7 +2201,6 @@
     <div class="container">
       <div class="header-content">
         <div class="logo">
-          <div class="logo-icon">F</div>
           <div class="logo-text">FOMUS <span>中小企業向け 実践型AI研修</span></div>
         </div>
         <nav>
@@ -2179,38 +2222,87 @@
         <div>
           <span class="section-label">中小企業経営者向けAI研修</span>
           <div class="hero-title">
-            <div class="title-badge">中小企業のための</div>
-            <h1 class="main-heading">実践型AI研修</h1>
-            <div class="brand-tag">by <strong>FOMUS</strong></div>
+            <div class="title-badge">経営者と従業員のための</div>
+            <div class="stylish-title">
+              <h1 class="main-heading" style="
+                font-family: 'Cormorant Garamond', serif; 
+                font-size: 3.5rem; 
+                line-height: 1.2; 
+                font-weight: 400; 
+                background: linear-gradient(135deg, #0ABAB5 0%, #FFD700 50%, #0ABAB5 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                margin-bottom: 0.5rem;
+              ">
+                AI<span style="font-style: italic; font-weight: 600;">を"使える人材"</span><span style="display: block; font-size: 2.8rem; margin-top: 0.2rem;">に育てる<span style="color: #FFD700; font-weight: 600;">10時間</span></span>
+              </h1>
+              <div style="
+                font-family: 'Noto Sans JP', sans-serif;
+                font-size: 1.3rem;
+                font-weight: 300;
+                color: var(--primary);
+                margin-bottom: 0.8rem;
+                letter-spacing: 0.5px;
+                opacity: 0.9;
+              ">
+                翌日から業務改善できる実践型研修
+              </div>
+            </div>
+            <div class="brand-tag" style="
+              font-family: 'Cormorant Garamond', serif;
+              font-size: 1.1rem;
+              font-weight: 300;
+              color: var(--charcoal);
+              opacity: 0.7;
+              font-style: italic;
+            ">by <strong style="font-weight: 600; color: var(--tiffany-blue);">FOMUS</strong></div>
           </div>
           <p class="hero-text">
-            中小企業向け・実践7割の短期集中。ChatGPT・Gemini・画像/音楽生成まで幅広く体験し、翌日から業務に使える状態へ。
+            📌 経営者と従業員のためのAIリスキリングプログラム<br>
+            📌 ChatGPT / Gemini / 画像生成 / 音楽生成まで幅広く体験<br>
+            📌 助成金対応で実質5万円から受講可能
           </p>
           <div class="button-group">
             <a href="#plans" class="btn-luxury">プランを見る</a>
-            <a href="#contact" class="btn-outline-luxury">お問い合わせ</a>
+            <a href="#contact" class="btn-outline-luxury">無料相談する</a>
           </div>
           <p class="small-text">講義3割 / 実践7割・2h×5回（合計10時間）</p>
+          <div class="credibility-text" style="margin-top: 24px; padding: 16px; background: rgba(51, 51, 51, 0.05); border-radius: 8px; font-size: 14px; color: var(--charcoal);">
+            <strong>講師実績：</strong>ドバイ政府スタートアップ支援プログラム採択実績あり・投資ファンドからの資金調達経験を持つ講師が直接指導
+          </div>
         </div>
         <div>
           <div class="feature-visual">
             <div class="feature-grid">
               <div class="feature-card">
+                <div class="ai-tool-icon" style="width: 40px; height: 40px; background: linear-gradient(135deg, #10B981 0%, #059669 100%); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
+                  <span style="color: white; font-weight: bold; font-size: 14px;">💬</span>
+                </div>
                 <div class="feature-label">TEXT</div>
                 <div class="feature-title">ChatGPT / Gemini</div>
                 <p class="feature-desc">要約・企画・翻訳・議事録… 明日から使える業務ユース。</p>
               </div>
               <div class="feature-card">
+                <div class="ai-tool-icon" style="width: 40px; height: 40px; background: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
+                  <span style="color: white; font-weight: bold; font-size: 14px;">🎨</span>
+                </div>
                 <div class="feature-label">IMAGE</div>
                 <div class="feature-title">MidJourney</div>
                 <p class="feature-desc">資料やSNSのビジュアルを高速生成。プロンプトで表現力を鍛える。</p>
               </div>
               <div class="feature-card">
+                <div class="ai-tool-icon" style="width: 40px; height: 40px; background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
+                  <span style="color: white; font-weight: bold; font-size: 14px;">🎵</span>
+                </div>
                 <div class="feature-label">AUDIO</div>
                 <div class="feature-title">SUNO</div>
                 <p class="feature-desc">音楽生成で"言語→非言語"の指示力を体得。BGM活用も。</p>
               </div>
               <div class="feature-card">
+                <div class="ai-tool-icon" style="width: 40px; height: 40px; background: linear-gradient(135deg, #06B6D4 0%, #0891B2 100%); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
+                  <span style="color: white; font-weight: bold; font-size: 14px;">⚙️</span>
+                </div>
                 <div class="feature-label">CUSTOM</div>
                 <div class="feature-title">Day5 カスタム</div>
                 <p class="feature-desc">希望テーマに合わせて最適化。社内導入の道筋を作る。</p>
