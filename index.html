@@ -1730,6 +1730,12 @@
         filter: brightness(1.1);
       }
     }
+
+    /* Scroll animation class */
+    .animate-in {
+      opacity: 1 !important;
+      transform: translateY(0) !important;
+    }
     
     /* Mobile First Responsive - Optimized UX */
     @media (max-width: 968px) {
@@ -2856,6 +2862,27 @@ ${message}
       
       document.querySelectorAll('img[data-src]').forEach(img => {
         imageObserver.observe(img);
+      });
+
+      // Scroll animation observer with mobile-friendly timing
+      const scrollObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate-in');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.1,
+        rootMargin: window.innerWidth <= 768 ? '-80px 0px -50px 0px' : '-50px 0px'
+      });
+      
+      // Apply animation to challenge cards with delay for mobile
+      document.querySelectorAll('.challenge-card, .challenges-title').forEach((element, index) => {
+        element.style.opacity = '0';
+        element.style.transform = 'translateY(30px)';
+        element.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
+        scrollObserver.observe(element);
       });
     }
   </script>
