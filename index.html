@@ -353,29 +353,79 @@
     
     .title-badge {
       display: inline-block;
-      background: linear-gradient(135deg, var(--tiffany-blue), var(--tiffany-dark));
+      background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
       color: white;
-      padding: 8px 20px;
-      border-radius: 25px;
-      font-size: 14px;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-      margin-bottom: 20px;
-      box-shadow: 0 4px 15px rgba(10, 186, 181, 0.3);
+      padding: 10px 32px 10px 45px;
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      margin-bottom: 24px;
+      box-shadow: 0 8px 24px rgba(255, 215, 0, 0.4);
+      text-transform: uppercase;
+      position: relative;
+      overflow: hidden;
+      animation: glow 2s ease-in-out infinite;
+    }
+    
+    @keyframes glow {
+      0%, 100% { box-shadow: 0 8px 24px rgba(255, 215, 0, 0.4); }
+      50% { box-shadow: 0 12px 32px rgba(255, 215, 0, 0.6); }
+    }
+    
+    .title-badge::before {
+      content: '✨';
+      position: absolute;
+      left: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 16px;
+      animation: sparkle 1.5s ease-in-out infinite;
+    }
+    
+    @keyframes sparkle {
+      0%, 100% { opacity: 1; transform: translateY(-50%) scale(1); }
+      50% { opacity: 0.7; transform: translateY(-50%) scale(1.2); }
     }
     
     .main-heading {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 64px;
-      font-weight: 800;
-      line-height: 1.1;
+      font-family: 'Montserrat', 'Hiragino Sans', sans-serif;
+      font-size: 68px;
+      font-weight: 900;
+      line-height: 1;
       color: var(--charcoal);
-      margin: 0 0 16px 0;
-      letter-spacing: -2px;
-      background: linear-gradient(135deg, var(--charcoal) 0%, #2c3e50 100%);
+      margin: 0 0 24px 0;
+      letter-spacing: -1px;
+      position: relative;
+      background: linear-gradient(135deg, #0ABAB5 0%, #088B87 50%, #066663 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
+      animation: titleGradient 3s ease-in-out infinite;
+      background-size: 200% 200%;
+      text-shadow: 0 4px 12px rgba(10, 186, 181, 0.2);
+    }
+    
+    @keyframes titleGradient {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+    
+    .main-heading::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 140px;
+      height: 5px;
+      background: linear-gradient(90deg, var(--gold), transparent);
+      border-radius: 3px;
+      animation: slideIn 1s ease-out;
+    }
+    
+    @keyframes slideIn {
+      from { width: 0; }
+      to { width: 140px; }
     }
     
     .brand-tag {
@@ -385,11 +435,29 @@
       font-weight: 400;
       letter-spacing: 2px;
       text-transform: uppercase;
+      position: relative;
+      display: inline-block;
+      animation: fadeInUp 1s ease-out 0.5s both;
+    }
+    
+    @keyframes fadeInUp {
+      from { 
+        opacity: 0; 
+        transform: translateY(20px);
+      }
+      to { 
+        opacity: 1; 
+        transform: translateY(0);
+      }
     }
     
     .brand-tag strong {
-      font-weight: 700;
-      color: var(--charcoal);
+      font-weight: 900;
+      background: linear-gradient(135deg, var(--charcoal), var(--tiffany-dark));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-size: 20px;
     }
     
     .hero-text {
@@ -860,7 +928,7 @@
     .feature-highlight::before {
       content: '👉';
       position: absolute;
-      left: -12px;
+      left: -25px;
       top: 50%;
       transform: translateY(-50%);
       font-size: 16px;
@@ -1675,9 +1743,9 @@
       }
       
       .main-heading {
-        font-size: 36px !important;
-        line-height: 1.2 !important;
-        letter-spacing: -1px !important;
+        font-size: 28px !important;
+        line-height: 1.3 !important;
+        letter-spacing: -0.5px !important;
         margin: 0 0 12px 0 !important;
       }
       
@@ -1687,7 +1755,7 @@
       }
       
       h2 {
-        font-size: 24px !important;
+        font-size: 22px !important;
         line-height: 1.4 !important;
         margin-bottom: 16px !important;
       }
@@ -1823,82 +1891,83 @@
       
       .feature-highlight {
         font-size: 15px !important;
-        padding: 20px 24px !important;
+        padding: 20px 24px 20px 36px !important;
         border-radius: 16px !important;
         line-height: 1.6 !important;
         text-align: center !important;
         margin-top: 20px !important;
         font-weight: 600 !important;
+        position: relative !important;
       }
       
-      /* Comparison Mobile - Complete Redesign as Cards */
+      .feature-highlight::before {
+        left: 8px !important;
+        font-size: 18px !important;
+        background: transparent !important;
+        padding: 0 !important;
+      }
+      
+      /* Comparison Mobile - Responsive Table */
       .comparison-container {
         margin: 24px 0 !important;
-        display: none; /* Hide original table on mobile */
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        border-radius: 12px !important;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08) !important;
+      }
+      
+      .comparison-table {
+        min-width: 100% !important;
+        width: auto !important;
+        border-collapse: collapse !important;
+        font-size: 14px !important;
+      }
+      
+      .comparison-header,
+      .comparison-row {
+        display: table-row !important;
+      }
+      
+      .comparison-header > div,
+      .comparison-row > div {
+        display: table-cell !important;
+        padding: 12px 8px !important;
+        vertical-align: top !important;
+        border-bottom: 1px solid rgba(10, 186, 181, 0.1) !important;
+        font-size: 13px !important;
+        line-height: 1.4 !important;
+      }
+      
+      .comparison-item-label {
+        font-weight: 700 !important;
+        background: var(--charcoal) !important;
+        color: white !important;
+        width: 80px !important;
+        min-width: 80px !important;
+        text-align: center !important;
+        font-size: 12px !important;
+      }
+      
+      .comparison-other {
+        background: #f8f9fa !important;
+        color: #666 !important;
+        width: 45% !important;
+        font-size: 13px !important;
+        line-height: 1.5 !important;
+      }
+      
+      .comparison-fomus {
+        background: linear-gradient(135deg, var(--tiffany-light), #e0f7f6) !important;
+        color: var(--tiffany-dark) !important;
+        font-weight: 600 !important;
+        width: 45% !important;
+        font-size: 13px !important;
+        line-height: 1.5 !important;
+        border-left: 3px solid var(--tiffany-blue) !important;
       }
       
       .comparison-mobile {
-        display: block !important;
-        margin: 24px 0;
-      }
-      
-      .mobile-comparison-item {
-        background: white;
-        border-radius: 16px;
-        padding: 24px;
-        margin-bottom: 20px;
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-        border: 1px solid rgba(10, 186, 181, 0.1);
-      }
-      
-      .mobile-comparison-title {
-        font-size: 18px !important;
-        font-weight: 700 !important;
-        color: var(--charcoal) !important;
-        margin-bottom: 16px !important;
-        text-align: center !important;
-        padding: 12px 20px;
-        background: linear-gradient(135deg, var(--tiffany-light), #f0f9f9);
-        border-radius: 12px;
-      }
-      
-      .mobile-vs-container {
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-      }
-      
-      .mobile-vs-item {
-        padding: 16px;
-        border-radius: 12px;
-        font-size: 15px !important;
-        line-height: 1.6 !important;
-        position: relative;
-      }
-      
-      .mobile-vs-other {
-        background: #f8f9fa;
-        color: #666;
-        border-left: 3px solid #ccc;
-      }
-      
-      .mobile-vs-other::before {
-        content: '😐 他社: ';
-        font-weight: bold;
-        color: #666;
-      }
-      
-      .mobile-vs-fomus {
-        background: linear-gradient(135deg, var(--tiffany-light), #e0f7f6);
-        color: var(--tiffany-dark);
-        border-left: 4px solid var(--tiffany-blue);
-        font-weight: 600;
-      }
-      
-      .mobile-vs-fomus::before {
-        content: '✨ FOMUS: ';
-        font-weight: bold;
-        color: var(--tiffany-blue);
+        display: none !important;
       }
       
       .emphasis-quote {
