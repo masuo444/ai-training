@@ -2899,7 +2899,7 @@ ${message}
         imageObserver.observe(img);
       });
 
-      // Scroll animation observer with mobile-friendly timing
+      // Scroll animation observer with proper spacing to prevent overlap
       const scrollObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
@@ -2909,14 +2909,14 @@ ${message}
         });
       }, {
         threshold: 0.1,
-        rootMargin: window.innerWidth <= 768 ? '-80px 0px -50px 0px' : '-50px 0px'
+        rootMargin: window.innerWidth <= 768 ? '-200px 0px -100px 0px' : '-100px 0px'
       });
       
-      // Apply animation to challenge cards with delay for mobile
+      // Apply simple animation to challenge section only
       document.querySelectorAll('.challenge-card, .challenges-title').forEach((element, index) => {
         element.style.opacity = '0';
-        element.style.transform = 'translateY(30px)';
-        element.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
+        element.style.transform = 'translateY(20px)';
+        element.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
         scrollObserver.observe(element);
       });
     }
