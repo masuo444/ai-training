@@ -1769,123 +1769,37 @@
         text-align: center !important;
       }
       
-      /* New Hero Mobile Styles */
-      .hero-content {
-        padding: 24px 0 28px 0 !important;
-        text-align: left !important;
-        max-width: 100% !important;
+      .hero-title {
+        text-align: center !important;
+        margin: 40px 0 50px 0 !important;
+        padding: 0 20px !important;
       }
 
-      .hero-badge {
+      .main-heading {
+        font-size: 1.8rem !important;
+        line-height: 1.3 !important;
+        text-align: center !important;
+        display: block !important;
+        word-break: keep-all !important;
+        white-space: normal !important;
+        margin: 30px 0 40px 0 !important;
+        padding: 0 10px !important;
+      }
+
+      .main-heading span {
+        font-size: 1.8rem !important;
+        display: inline !important;
+        margin-top: 0 !important;
+      }
+      
+      .title-badge {
         font-size: 12px !important;
-        color: var(--tiffany-blue) !important;
+        padding: 6px 16px !important;
         margin-bottom: 16px !important;
-        font-weight: 500 !important;
-        background: rgba(255, 255, 255, 0.85) !important;
-        padding: 6px 12px !important;
-        border-radius: 20px !important;
-        display: inline-block !important;
-        border: 1px solid rgba(10, 186, 181, 0.2) !important;
-      }
-
-      .hero-main-title {
-        font-size: 27px !important;
-        font-weight: 700 !important;
-        line-height: 1.2 !important;
-        color: #2A2F38 !important;
-        margin-bottom: 16px !important;
-        text-align: center !important;
-        background: rgba(255, 255, 255, 0.85) !important;
-        padding: 8px 12px !important;
-        border-radius: 8px !important;
-      }
-
-      .hero-sub-title {
-        font-size: 17px !important;
-        font-weight: 500 !important;
-        line-height: 1.5 !important;
-        color: #2A2F38 !important;
-        margin-bottom: 20px !important;
-        text-align: left !important;
-        background: rgba(255, 255, 255, 0.85) !important;
-        padding: 8px 12px !important;
-        border-radius: 6px !important;
-      }
-
-      .hero-benefits {
-        list-style: none !important;
-        padding: 0 !important;
-        margin: 0 0 24px 0 !important;
-      }
-
-      .hero-benefits li {
-        font-size: 15px !important;
-        line-height: 1.6 !important;
-        color: #2A2F38 !important;
-        margin-bottom: 8px !important;
-        padding-left: 16px !important;
-        position: relative !important;
-        background: rgba(255, 255, 255, 0.85) !important;
-        padding: 6px 6px 6px 20px !important;
-        border-radius: 4px !important;
-        margin-bottom: 6px !important;
-      }
-
-      .hero-benefits li::before {
-        content: '•' !important;
-        position: absolute !important;
-        left: 8px !important;
-        color: var(--tiffany-blue) !important;
-        font-weight: bold !important;
-      }
-
-      .hero-buttons {
-        margin-bottom: 20px !important;
-      }
-
-      .btn-primary-cta {
         display: block !important;
-        width: 100% !important;
-        height: 52px !important;
-        background: var(--tiffany-blue) !important;
-        color: white !important;
-        text-decoration: none !important;
-        border-radius: 12px !important;
-        font-size: 16px !important;
-        font-weight: 600 !important;
-        text-align: center !important;
-        line-height: 52px !important;
-        margin-bottom: 14px !important;
-        box-shadow: 0 4px 12px rgba(10, 186, 181, 0.3) !important;
-        transition: all 0.3s ease !important;
-      }
-
-      .btn-secondary-cta {
-        display: block !important;
-        width: 100% !important;
-        height: 48px !important;
-        background: transparent !important;
-        color: var(--tiffany-blue) !important;
-        text-decoration: none !important;
-        border: 2px solid var(--tiffany-blue) !important;
-        border-radius: 12px !important;
-        font-size: 16px !important;
-        font-weight: 500 !important;
-        text-align: center !important;
-        line-height: 44px !important;
-        transition: all 0.3s ease !important;
-      }
-
-      .hero-brand {
-        font-size: 14px !important;
-        color: #666 !important;
-        text-align: center !important;
-        font-style: italic !important;
-      }
-
-      .hero-brand strong {
-        color: var(--tiffany-blue) !important;
-        font-weight: 600 !important;
+        width: fit-content !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
       }
       
       .main-heading {
@@ -2359,25 +2273,55 @@
   <section id="hero" class="hero">
     <div class="container">
       <div class="hero-grid">
-        <div class="hero-content">
-          <div class="hero-badge">経営者と従業員のためのプログラム</div>
-          
-          <h1 class="hero-main-title">AIを"使える人材"に育てる10時間</h1>
-          
-          <h2 class="hero-sub-title">翌日から業務改善できる、中小企業のための実践型AI研修</h2>
-          
-          <ul class="hero-benefits">
-            <li>ChatGPT / Gemini / 画像・音楽生成まで幅広く体験</li>
-            <li>講義3割・実践7割（短期集中10h）</li>
-            <li>助成金対応：中小は実質5万円〜</li>
-          </ul>
-          
-          <div class="hero-buttons">
-            <a href="#contact" class="btn-primary-cta">無料相談する</a>
-            <a href="#plans" class="btn-secondary-cta">プランを見る</a>
+        <div>
+          <span class="section-label">中小企業経営者向けAI研修</span>
+          <div class="hero-title">
+            <div class="title-badge">経営者と従業員のための</div>
+            <div class="stylish-title">
+              <h1 class="main-heading" style="
+                font-family: 'Cormorant Garamond', serif; 
+                font-size: 3.5rem; 
+                line-height: 1.2; 
+                font-weight: 400; 
+                background: linear-gradient(135deg, #0ABAB5 0%, #FFD700 50%, #0ABAB5 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                margin-bottom: 0.5rem;
+              ">
+                AIを使える人材に育てる<span style="color: #FFD700; font-weight: 600;">10時間</span>
+              </h1>
+              <div style="
+                font-family: 'Noto Sans JP', sans-serif;
+                font-size: 1.3rem;
+                font-weight: 300;
+                color: var(--primary);
+                margin-bottom: 0.8rem;
+                letter-spacing: 0.5px;
+                opacity: 0.9;
+              ">
+                翌日から業務改善できる実践型研修
+              </div>
+            </div>
+            <div class="brand-tag" style="
+              font-family: 'Cormorant Garamond', serif;
+              font-size: 1.1rem;
+              font-weight: 300;
+              color: var(--charcoal);
+              opacity: 0.7;
+              font-style: italic;
+            ">by <strong style="font-weight: 600; color: var(--tiffany-blue);">FOMUS</strong></div>
           </div>
-          
-          <div class="hero-brand">by <strong>FOMUS</strong></div>
+          <p class="hero-text">
+            📌 経営者と従業員のためのAIリスキリングプログラム<br>
+            📌 ChatGPT / Gemini / 画像生成 / 音楽生成まで幅広く体験<br>
+            📌 助成金対応で実質5万円から受講可能
+          </p>
+          <div class="button-group">
+            <a href="#plans" class="btn-luxury">プランを見る</a>
+            <a href="#contact" class="btn-outline-luxury">無料相談する</a>
+          </div>
+          <p class="small-text">講義3割 / 実践7割・2h×5回（合計10時間）</p>
         </div>
         <div>
           <div class="feature-visual">
