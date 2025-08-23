@@ -2156,7 +2156,14 @@
       .cta-list li {
         font-size: 15px !important;
         padding: 8px 0 !important;
+        padding-left: 0 !important;
         text-align: center !important;
+        position: relative !important;
+      }
+
+      .cta-list li::before {
+        content: '' !important;
+        display: none !important;
       }
       
       .contact-form {
