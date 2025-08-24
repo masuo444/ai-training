@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>会社概要 | FOMUS AI研修</title>
+  <meta name="description" content="FOMUS（フォーマス）の会社概要。代表者情報、事業内容、理念等をご紹介します。中小企業向け実践型AI研修を提供しています。">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpeg" href="favicon.jpg">
+  
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    html {
+      overflow-x: hidden;
+      width: 100%;
+      max-width: 100vw;
+    }
+    
+    :root {
+      --tiffany-blue: #0ABAB5;
+      --tiffany-light: #E0F7F6;
+      --tiffany-dark: #088B87;
+      --gold: #FFD700;
+      --pearl: #F8F8F8;
+      --charcoal: #2C3E50;
+      --primary: #0ABAB5;
+    }
+    
+    body {
+      font-family: 'Montserrat', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Noto Sans CJK JP', sans-serif;
+      line-height: 1.8;
+      color: var(--charcoal);
+      background: linear-gradient(180deg, #FFFFFF 0%, var(--pearl) 50%, var(--tiffany-light) 100%);
+      overflow-x: hidden;
+      width: 100%;
+      max-width: 100vw;
+    }
+    
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+    
+    header {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(10, 186, 181, 0.1);
+      padding: 20px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo-text {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--tiffany-blue);
+      text-decoration: none;
+    }
+    
+    .logo-text span {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--charcoal);
+      opacity: 0.8;
+    }
+    
+    main {
+      padding: 60px 0;
+    }
+    
+    h1 {
+      font-size: 2.5rem;
+      color: var(--tiffany-blue);
+      margin-bottom: 2rem;
+      text-align: center;
+      font-weight: 600;
+    }
+    
+    .about-hero {
+      background: white;
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+      margin-bottom: 40px;
+      text-align: center;
+    }
+    
+    .company-info {
+      background: white;
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+      margin-bottom: 40px;
+    }
+    
+    .profile-section {
+      background: white;
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+      margin-bottom: 40px;
+    }
+    
+    .profile-card {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      margin-bottom: 30px;
+    }
+    
+    .profile-image {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid var(--tiffany-light);
+    }
+    
+    .profile-info h3 {
+      font-size: 1.5rem;
+      color: var(--tiffany-dark);
+      margin-bottom: 0.5rem;
+    }
+    
+    .profile-info .role {
+      color: var(--tiffany-blue);
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    
+    h2 {
+      font-size: 1.8rem;
+      color: var(--tiffany-dark);
+      margin: 2rem 0 1rem 0;
+      font-weight: 600;
+      border-bottom: 3px solid var(--tiffany-light);
+      padding-bottom: 0.5rem;
+    }
+    
+    h3 {
+      font-size: 1.3rem;
+      color: var(--tiffany-dark);
+      margin: 1.5rem 0 0.8rem 0;
+      font-weight: 600;
+    }
+    
+    .info-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 2rem 0;
+    }
+    
+    .info-table th,
+    .info-table td {
+      padding: 16px;
+      text-align: left;
+      border-bottom: 1px solid rgba(10, 186, 181, 0.1);
+      vertical-align: top;
+    }
+    
+    .info-table th {
+      background: linear-gradient(135deg, var(--tiffany-light), #e0f7f6);
+      font-weight: 600;
+      color: var(--tiffany-dark);
+      width: 150px;
+    }
+    
+    .info-table td {
+      background: white;
+    }
+    
+    .mission-box {
+      background: linear-gradient(135deg, var(--tiffany-light), #e0f7f6);
+      border-left: 4px solid var(--tiffany-blue);
+      padding: 30px;
+      border-radius: 15px;
+      margin: 2rem 0;
+      text-align: center;
+    }
+    
+    .mission-box h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--tiffany-dark);
+    }
+    
+    .mission-box p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+    
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin: 2rem 0;
+    }
+    
+    .value-card {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+      border-top: 4px solid var(--tiffany-blue);
+    }
+    
+    .value-card h4 {
+      font-size: 1.2rem;
+      color: var(--tiffany-dark);
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+    
+    .highlight-text {
+      color: var(--tiffany-blue);
+      font-weight: 600;
+    }
+    
+    .back-link {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--tiffany-blue), var(--tiffany-dark));
+      color: white;
+      padding: 12px 24px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: transform 0.2s ease;
+      margin-bottom: 2rem;
+    }
+    
+    .back-link:hover {
+      transform: translateY(-2px);
+    }
+    
+    footer {
+      background: var(--charcoal);
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+    }
+    
+    @media (max-width: 768px) {
+      .container {
+        padding: 0 20px;
+      }
+      
+      h1 {
+        font-size: 2rem;
+      }
+      
+      .about-hero,
+      .company-info,
+      .profile-section {
+        padding: 24px;
+      }
+      
+      .profile-card {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      .profile-image {
+        width: 100px;
+        height: 100px;
+      }
+      
+      .info-table th,
+      .info-table td {
+        display: block;
+        width: 100%;
+        padding: 12px 16px;
+      }
+      
+      .info-table th {
+        background: var(--tiffany-blue);
+        color: white;
+        border-radius: 8px 8px 0 0;
+      }
+      
+      .info-table td {
+        border-radius: 0 0 8px 8px;
+        border: 1px solid rgba(10, 186, 181, 0.2);
+        border-top: none;
+        margin-bottom: 20px;
+      }
+      
+      .values-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <a href="index.html" class="logo-text">FOMUS <span>中小企業向け 実践型AI研修</span></a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <a href="index.html" class="back-link">← トップページに戻る</a>
+      
+      <h1>会社概要</h1>
+      
+      <div class="about-hero">
+        <h2>中小企業のAI活用を支援し、<br>未来の競争力を育てる</h2>
+        <p style="font-size: 1.1rem; margin-top: 1rem; line-height: 1.8;">
+          FOMUSは、中小企業が急速に発展するAI技術を実際のビジネスに活用できるよう、
+          実践的で楽しい研修プログラムを提供しています。
+        </p>
+      </div>
+
+      <div class="company-info">
+        <h2>会社情報</h2>
+        <table class="info-table">
+          <tr>
+            <th>会社名</th>
+            <td>FOMUS（フォーマス）</td>
+          </tr>
+          <tr>
+            <th>代表者</th>
+            <td>増尾 圭亮（ますお けいすけ）</td>
+          </tr>
+          <tr>
+            <th>設立</th>
+            <td>2023年</td>
+          </tr>
+          <tr>
+            <th>所在地</th>
+            <td>アイルランド共和国<br>
+                <small>※グローバル展開により海外を拠点としています</small></td>
+          </tr>
+          <tr>
+            <th>事業内容</th>
+            <td>
+              ・中小企業向けAI研修事業<br>
+              ・AI活用コンサルティング<br>
+              ・デジタル人材育成支援<br>
+              ・国際的なAIビジネス展開支援
+            </td>
+          </tr>
+          <tr>
+            <th>対象地域</th>
+            <td>日本全国（オンライン研修により全地域対応）</td>
+          </tr>
+          <tr>
+            <th>連絡先</th>
+            <td>fomus.official@gmail.com</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="profile-section">
+        <h2>代表者紹介</h2>
+        <div class="profile-card">
+          <img src="プロフィール.png" alt="増尾圭亮" class="profile-image">
+          <div class="profile-info">
+            <h3>増尾 圭亮</h3>
+            <div class="role">FOMUS 代表 / AI活用コンサルタント</div>
+            <p>アイルランドを拠点に、AI技術を活用した事業展開を実践している経営者。自身がAIツールを駆使してビジネスを拡大した経験をもとに、中小企業向けの実践的なAI研修プログラムを開発。</p>
+          </div>
+        </div>
+        
+        <h3>経歴・実績</h3>
+        <ul style="margin: 1rem 0; padding-left: 2rem; line-height: 1.8;">
+          <li>現在進行形でChatGPT、MidJourney、SUNO等のAIツールを事業に活用</li>
+          <li>海外展開を通じたグローバルなAI活用事例の蓄積</li>
+          <li>初心者にもわかりやすい指導方法で、AI技術の敷居を下げる</li>
+          <li>「楽しさ」を重視した研修で、参加者の自走力を育成</li>
+        </ul>
+        
+        <h3>指導方針</h3>
+        <div class="values-grid">
+          <div class="value-card">
+            <h4>🎯 実践重視</h4>
+            <p>理論よりも実際に手を動かす体験を重視。翌日から業務で使える具体的なスキルを習得いただきます。</p>
+          </div>
+          <div class="value-card">
+            <h4>😊 楽しい学習</h4>
+            <p>画像生成・音楽生成など「遊び」要素を取り入れることで、AIに対する親しみやすさを醸成します。</p>
+          </div>
+          <div class="value-card">
+            <h4>🤝 初心者目線</h4>
+            <p>IT初心者の躓きポイントを熟知し、専門用語を使わずわかりやすく説明します。</p>
+          </div>
+          <div class="value-card">
+            <h4>💡 経営視点</h4>
+            <p>単なるツール操作ではなく、経営改善に直結する活用方法をお伝えします。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="company-info">
+        <div class="mission-box">
+          <h3>🌟 私たちのミッション</h3>
+          <p>
+            <span class="highlight-text">「中小企業がAIで未来を切り拓く力を育てる」</span><br><br>
+            大企業に比べてリソースが限られる中小企業こそ、AI技術による効率化と競争力向上が重要です。
+            私たちは、難しいと思われがちなAI技術を身近で楽しいものにし、
+            明日から使える実践的なスキルとして身につけていただけるよう支援します。
+          </p>
+        </div>
+
+        <h2>特徴・強み</h2>
+        <ul style="margin: 1rem 0; padding-left: 2rem; line-height: 1.8;">
+          <li><strong>実践7割の研修スタイル：</strong>座学より手を動かす時間を重視</li>
+          <li><strong>幅広いAIツールに対応：</strong>ChatGPT・MidJourney・SUNO等を横断的に習得</li>
+          <li><strong>助成金活用サポート：</strong>人材開発支援助成金の申請をサポート</li>
+          <li><strong>現役実践者による指導：</strong>机上の空論ではない生きたノウハウを提供</li>
+          <li><strong>継続的なサポート：</strong>研修後の質問・相談にも対応</li>
+        </ul>
+
+        <h2>社会への貢献</h2>
+        <p>
+          日本の中小企業のDX推進とAI活用による生産性向上を通じて、
+          地域経済の活性化と国際競争力の向上に貢献します。
+          特に人材不足に悩む中小企業において、AI活用による業務効率化は急務であり、
+          私たちの研修がその一助となることを目指しています。
+        </p>
+
+        <div style="margin-top: 3rem; padding: 20px; background: linear-gradient(135deg, var(--pearl), #f1f5f9); border-radius: 10px;">
+          <p><strong>お問い合わせ</strong></p>
+          <p>研修に関するご質問・ご相談は、お気軽にお問い合わせください。<br>
+          電子メール：<a href="mailto:fomus.official@gmail.com" style="color: var(--tiffany-blue);">fomus.official@gmail.com</a></p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2025 FOMUS. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1696,17 +1696,23 @@
     
     .footer-links {
       display: flex;
-      gap: 40px;
+      gap: 20px;
+      margin-top: 12px;
+      flex-wrap: wrap;
     }
     
     .footer-links a {
-      color: var(--charcoal);
+      color: rgba(255, 255, 255, 0.8);
       text-decoration: none;
-      transition: color 0.3s;
+      transition: all 0.3s ease;
+      font-size: 0.9rem;
+      padding: 4px 8px;
+      border-radius: 4px;
     }
     
     .footer-links a:hover {
-      color: var(--tiffany-blue);
+      color: white;
+      background: rgba(255, 255, 255, 0.1);
     }
     
     /* Animations */
@@ -2818,7 +2824,15 @@
   <footer>
     <div class="container">
       <div class="footer-content">
-        <div>© 2025 FOMUS. All rights reserved.</div>
+        <div>
+          © 2025 FOMUS. All rights reserved.<br>
+          <div class="footer-links">
+            <a href="about.html">会社概要</a>
+            <a href="tokusho.html">特定商取引法に基づく表記</a>
+            <a href="privacy.html">プライバシーポリシー</a>
+            <a href="terms.html">利用規約</a>
+          </div>
+        </div>
         <div class="footer-right">人材開発支援助成金の制度は変更される場合があります。最新情報は公式要領をご確認ください。</div>
       </div>
     </div>
