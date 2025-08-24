@@ -1849,14 +1849,6 @@
         padding: 0 10px !important;
       }
 
-      .main-heading span {
-        font-size: 24px !important;
-        display: inline !important;
-        margin-top: 0 !important;
-        color: #10B981 !important;
-        font-weight: 800 !important;
-        white-space: nowrap !important;
-      }
       
       .title-badge {
         font-size: 12px !important;
@@ -1869,16 +1861,36 @@
       }
       
       .main-heading {
-        font-size: 24px !important;
+        font-size: 28px !important;
         line-height: 1.4 !important;
         letter-spacing: -0.3px !important;
-        margin: 0 0 12px 0 !important;
-        color: #10B981 !important;
+        margin: 0 0 16px 0 !important;
+        color: var(--charcoal) !important;
         text-align: center !important;
         word-break: keep-all !important;
-        white-space: nowrap !important;
+        white-space: normal !important;
         overflow: visible !important;
-        padding: 0 5px !important;
+        padding: 0 10px !important;
+      }
+      
+      .main-heading span:first-child {
+        background: linear-gradient(135deg, #0ABAB5, #10B981) !important;
+        -webkit-background-clip: text !important;
+        -webkit-text-fill-color: transparent !important;
+        background-clip: text !important;
+        font-weight: 600 !important;
+      }
+      
+      .main-heading br + span {
+        font-size: 20px !important;
+        color: var(--primary) !important;
+        opacity: 0.9 !important;
+      }
+      
+      .main-heading br + span + br + span {
+        font-size: 16px !important;
+        color: var(--charcoal) !important;
+        opacity: 0.7 !important;
       }
       
       .brand-tag {
@@ -2326,15 +2338,18 @@
       /* Extra small devices - 320px以下 */
       @media (max-width: 320px) {
         .main-heading {
-          font-size: 20px !important;
+          font-size: 22px !important;
           line-height: 1.3 !important;
           padding: 0 5px !important;
-          color: #10B981 !important;
+          color: var(--charcoal) !important;
         }
         
-        .main-heading span {
-          font-size: 20px !important;
-          color: #10B981 !important;
+        .main-heading br + span {
+          font-size: 18px !important;
+        }
+        
+        .main-heading br + span + br + span {
+          font-size: 14px !important;
         }
         
         .container {
@@ -2374,26 +2389,17 @@
             <div class="title-badge">経営者と従業員のための</div>
             <div class="stylish-title">
               <h1 class="main-heading" style="
-                font-family: 'Cormorant Garamond', serif; 
-                font-size: 3.5rem; 
-                line-height: 1.2; 
+                font-family: 'Noto Sans JP', sans-serif; 
+                font-size: 3rem; 
+                line-height: 1.4; 
                 font-weight: 400; 
-                color: #10B981;
-                margin-bottom: 0.5rem;
+                color: var(--charcoal);
+                margin-bottom: 1rem;
               ">
-                AIを使える人材になる<span style="color: #10B981; font-weight: 600;">10時間</span>
+                <span style="background: linear-gradient(135deg, #0ABAB5, #10B981); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 600;">AI</span>を<span style="color: #10B981; font-weight: 600;">"使える人材"</span>に育てる実践型研修<br>
+                <span style="font-size: 1.5rem; color: var(--primary); font-weight: 300; opacity: 0.9; line-height: 1.6;">翌日から業務改善できる、中小企業のためのAI研修</span><br>
+                <span style="font-size: 1.1rem; color: var(--charcoal); opacity: 0.7; font-weight: 300;">（講義3割・実践7割｜短期集中<span style="color: #FFD700; font-weight: 600;">10時間</span>）</span>
               </h1>
-              <div style="
-                font-family: 'Noto Sans JP', sans-serif;
-                font-size: 1.3rem;
-                font-weight: 300;
-                color: var(--primary);
-                margin-bottom: 0.8rem;
-                letter-spacing: 0.5px;
-                opacity: 0.9;
-              ">
-                翌日から業務改善できる実践型研修
-              </div>
             </div>
             <div class="brand-tag" style="
               font-family: 'Cormorant Garamond', serif;
