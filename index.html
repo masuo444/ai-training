@@ -415,69 +415,74 @@
       letter-spacing: -1px;
     }
     
-    /* Desktop hero styles */
+    /* Desktop hero styles - 洗練されたデザイン */
     .main-heading {
       font-family: 'Noto Sans JP', sans-serif;
-      font-size: 3rem;
-      line-height: 1.4;
-      font-weight: 400;
+      font-size: 3.5rem;
+      line-height: 1.2;
+      font-weight: 300;
+      color: var(--charcoal);
+      margin-bottom: 2rem;
+      text-align: left;
+    }
+    
+    /* デスクトップ版の美しいレイアウト */
+    .desktop-hero-line1 {
+      display: block;
+      font-size: 3.5rem;
+      line-height: 1.2;
+      font-weight: 300;
       color: var(--charcoal);
       margin-bottom: 1rem;
     }
     
-    .mobile-hero-line1 {
-      display: inline;
-      font-size: inherit;
-      line-height: inherit;
-      font-weight: inherit;
-      color: inherit;
-      margin-bottom: 0;
-      letter-spacing: inherit;
-    }
-    
-    .mobile-hero-line1 .ai-text {
+    .desktop-hero-line1 .ai-text {
       background: linear-gradient(135deg, #0ABAB5, #10B981);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
       font-weight: 600;
+      font-size: 4rem;
     }
     
-    .mobile-hero-line1 .green-text {
+    .desktop-hero-line1 .green-text {
       color: #10B981;
       font-weight: 600;
     }
     
-    .mobile-hero-line1 br {
-      display: none;
-    }
-    
-    .mobile-hero-line2 {
+    .desktop-hero-line2 {
       display: block;
-      font-size: 1.5rem;
-      color: var(--primary);
+      font-size: 1.8rem;
+      color: var(--tiffany-blue);
       font-weight: 300;
+      line-height: 1.4;
+      margin-bottom: 1rem;
       opacity: 0.9;
-      line-height: 1.6;
-      margin-top: 0.5rem;
     }
     
-    .mobile-hero-line2 br {
-      display: none;
-    }
-    
-    .mobile-hero-meta {
-      display: block;
+    .desktop-hero-meta {
+      display: inline-block;
       font-size: 1.1rem;
-      color: var(--charcoal);
-      opacity: 0.7;
-      font-weight: 300;
+      color: white;
+      font-weight: 500;
+      background: linear-gradient(135deg, #FFD700, #FFA500);
+      padding: 12px 32px;
+      border-radius: 50px;
+      box-shadow: 0 8px 24px rgba(255, 215, 0, 0.3);
       margin-top: 0.5rem;
     }
     
-    .mobile-hero-meta .gold-text {
-      color: #FFD700;
-      font-weight: 600;
+    .desktop-hero-meta .gold-text {
+      color: white;
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
+    
+    /* モバイル要素をデスクトップで非表示 */
+    .mobile-hero-line1,
+    .mobile-hero-line2,
+    .mobile-hero-meta {
+      display: none;
     }
     
     .hero-title {
@@ -1952,6 +1957,14 @@
         padding: 30px 20px !important;
         box-shadow: 0 4px 20px rgba(0,0,0,0.08) !important;
         margin-bottom: 30px !important;
+        text-align: center !important;
+      }
+      
+      /* デスクトップ要素をモバイルで非表示 */
+      .desktop-hero-line1,
+      .desktop-hero-line2,
+      .desktop-hero-meta {
+        display: none !important;
       }
       
       .mobile-hero-line1 {
@@ -2529,6 +2542,18 @@
             <div class="title-badge">経営者と従業員のための</div>
             <div class="stylish-title">
               <h1 class="main-heading">
+                <!-- デスクトップ版 -->
+                <span class="desktop-hero-line1">
+                  <span class="ai-text">AI</span>を<span class="green-text">"使える人材"</span>に育てる実践型研修
+                </span>
+                <span class="desktop-hero-line2">
+                  翌日から業務改善できる、中小企業のためのAI研修
+                </span>
+                <span class="desktop-hero-meta">
+                  講義3割・実践7割｜短期集中<span class="gold-text">10時間</span>
+                </span>
+                
+                <!-- モバイル版 -->
                 <span class="mobile-hero-line1">
                   <span class="ai-text">AI</span>を<span class="green-text">"使える人材"</span>に<br>
                   育てる実践型研修
