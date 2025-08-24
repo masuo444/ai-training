@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FOMUS AI研修 プレゼンテーション</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --tiffany-blue: #0ABAB5;
+      --tiffany-light: #E0F7F6;
+      --tiffany-dark: #088B87;
+      --gold: #FFD700;
+      --pearl: #F8F8F8;
+      --charcoal: #2C3E50;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(135deg, var(--pearl), var(--tiffany-light));
+      color: var(--charcoal);
+      overflow: hidden;
+    }
+    
+    .presentation-container {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .slide {
+      width: 90vw;
+      max-width: 1200px;
+      height: 80vh;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+      padding: 60px;
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .slide.active {
+      display: flex;
+      animation: slideIn 0.5s ease-out;
+    }
+    
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateX(30px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    
+    .slide-header {
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      font-size: 14px;
+      color: var(--tiffany-blue);
+      font-weight: 500;
+    }
+    
+    .slide-number {
+      position: absolute;
+      bottom: 30px;
+      right: 30px;
+      font-size: 12px;
+      color: var(--charcoal);
+      opacity: 0.5;
+    }
+    
+    h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: var(--tiffany-blue);
+      margin-bottom: 2rem;
+      text-align: center;
+      line-height: 1.2;
+    }
+    
+    h2 {
+      font-size: 2.5rem;
+      font-weight: 600;
+      color: var(--tiffany-dark);
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+    
+    h3 {
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: var(--tiffany-blue);
+      margin-bottom: 1.5rem;
+    }
+    
+    .subtitle {
+      font-size: 1.5rem;
+      color: var(--charcoal);
+      text-align: center;
+      margin-bottom: 1rem;
+      font-weight: 300;
+    }
+    
+    .highlight {
+      color: var(--gold);
+      font-weight: 600;
+    }
+    
+    .profile-section {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      margin: 2rem 0;
+    }
+    
+    .profile-image {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 4px solid var(--tiffany-light);
+    }
+    
+    .profile-info h3 {
+      color: var(--tiffany-dark);
+      margin-bottom: 0.5rem;
+    }
+    
+    .profile-info .role {
+      color: var(--tiffany-blue);
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    
+    .problem-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+      margin: 2rem 0;
+    }
+    
+    .problem-card {
+      background: linear-gradient(135deg, var(--pearl), #f1f5f9);
+      padding: 30px;
+      border-radius: 15px;
+      text-align: center;
+      border-left: 4px solid var(--gold);
+    }
+    
+    .solution-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+      margin: 2rem 0;
+    }
+    
+    .solution-card {
+      background: linear-gradient(135deg, var(--tiffany-light), #e0f7f6);
+      padding: 30px;
+      border-radius: 15px;
+      text-align: center;
+    }
+    
+    .feature-number {
+      width: 60px;
+      height: 60px;
+      background: var(--tiffany-blue);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      font-weight: bold;
+      margin: 0 auto 20px;
+    }
+    
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 2rem 0;
+    }
+    
+    .comparison-table th,
+    .comparison-table td {
+      padding: 20px;
+      text-align: left;
+      border-bottom: 2px solid var(--tiffany-light);
+    }
+    
+    .comparison-table th {
+      background: var(--tiffany-blue);
+      color: white;
+      font-weight: 600;
+    }
+    
+    .fomus-advantage {
+      background: linear-gradient(135deg, var(--tiffany-light), #e0f7f6);
+      font-weight: 600;
+      color: var(--tiffany-dark);
+    }
+    
+    .price-card {
+      background: linear-gradient(135deg, var(--tiffany-blue), var(--tiffany-dark));
+      color: white;
+      padding: 40px;
+      border-radius: 20px;
+      text-align: center;
+      margin: 20px;
+    }
+    
+    .original-price {
+      font-size: 2rem;
+      text-decoration: line-through;
+      opacity: 0.7;
+    }
+    
+    .actual-price {
+      font-size: 3rem;
+      color: var(--gold);
+      font-weight: bold;
+      margin: 10px 0;
+    }
+    
+    .navigation {
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 15px;
+      z-index: 1000;
+    }
+    
+    .nav-btn {
+      padding: 12px 24px;
+      background: var(--tiffany-blue);
+      color: white;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    
+    .nav-btn:hover {
+      background: var(--tiffany-dark);
+      transform: translateY(-2px);
+    }
+    
+    .nav-btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+    
+    .slide-indicator {
+      position: fixed;
+      top: 30px;
+      left: 30px;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 10px 20px;
+      border-radius: 25px;
+      font-size: 14px;
+      color: var(--tiffany-blue);
+      font-weight: 600;
+    }
+    
+    .agenda-list {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .agenda-list li {
+      padding: 15px 0;
+      border-bottom: 1px solid var(--tiffany-light);
+      font-size: 1.2rem;
+    }
+    
+    .agenda-list li::before {
+      content: '▶';
+      color: var(--tiffany-blue);
+      margin-right: 15px;
+      font-weight: bold;
+    }
+    
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      margin: 2rem 0;
+    }
+    
+    .stat-card {
+      text-align: center;
+      padding: 30px;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      border-top: 4px solid var(--tiffany-blue);
+    }
+    
+    .stat-number {
+      font-size: 3rem;
+      font-weight: bold;
+      color: var(--tiffany-blue);
+      margin-bottom: 10px;
+    }
+    
+    .cta-section {
+      text-align: center;
+      padding: 40px;
+      background: linear-gradient(135deg, var(--tiffany-blue), var(--tiffany-dark));
+      border-radius: 20px;
+      color: white;
+      margin: 2rem 0;
+    }
+    
+    .cta-button {
+      display: inline-block;
+      padding: 15px 40px;
+      background: var(--gold);
+      color: var(--charcoal);
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: bold;
+      margin-top: 20px;
+      transition: transform 0.3s ease;
+    }
+    
+    .cta-button:hover {
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body>
+  <div class="slide-indicator">
+    <span id="current-slide">1</span> / <span id="total-slides">15</span>
+  </div>
+
+  <div class="presentation-container">
+    
+    <!-- Slide 1: Title -->
+    <div class="slide active">
+      <div class="slide-number">1 / 15</div>
+      <h1>AIを使える人材になる<span class="highlight">10時間</span></h1>
+      <div class="subtitle">中小企業向け実践型AI研修</div>
+      <div class="subtitle" style="margin-top: 3rem; font-size: 1.2rem;">
+        合同会社FOMUS<br>
+        代表 増尾圭亮
+      </div>
+    </div>
+
+    <!-- Slide 2: Profile -->
+    <div class="slide">
+      <div class="slide-number">2 / 15</div>
+      <h2>講師紹介</h2>
+      <div class="profile-section">
+        <img src="プロフィール.png" alt="増尾圭亮" class="profile-image">
+        <div class="profile-info">
+          <h3>増尾 圭亮</h3>
+          <div class="role">合同会社FOMUS 代表 / AI活用コンサルタント</div>
+          <p>アイルランドを拠点に、AI技術を活用した事業展開を実践している経営者。</p>
+          <p>自身がAIツールを駆使してビジネスを拡大した経験をもとに、中小企業向けの実践的なAI研修プログラムを開発。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 3: Agenda -->
+    <div class="slide">
+      <div class="slide-number">3 / 15</div>
+      <h2>本日のアジェンダ</h2>
+      <ul class="agenda-list">
+        <li>中小企業が抱える課題</li>
+        <li>AI導入の障壁</li>
+        <li>FOMUSの解決策</li>
+        <li>他社との違い</li>
+        <li>具体的な業務改善効果</li>
+        <li>料金・助成金について</li>
+        <li>お申し込み方法</li>
+      </ul>
+    </div>
+
+    <!-- Slide 4: Problems -->
+    <div class="slide">
+      <div class="slide-number">4 / 15</div>
+      <h2>中小企業が抱える課題</h2>
+      <div class="problem-grid">
+        <div class="problem-card">
+          <h3>時間不足</h3>
+          <p>書類作成や事務作業に時間がかかり、本業に集中できない</p>
+        </div>
+        <div class="problem-card">
+          <h3>マンネリ化</h3>
+          <p>提案やアイデアがマンネリ化し、競合との差別化が困難</p>
+        </div>
+        <div class="problem-card">
+          <h3>リソース不足</h3>
+          <p>SNSやWeb発信にリソースを割けない</p>
+        </div>
+        <div class="problem-card">
+          <h3>IT人材不足</h3>
+          <p>IT人材がいなくてAI導入が進まない</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 5: AI Barriers -->
+    <div class="slide">
+      <div class="slide-number">5 / 15</div>
+      <h2>AI導入の障壁</h2>
+      <div style="text-align: center; font-size: 1.5rem; line-height: 2;">
+        <p style="margin: 2rem 0;">❌ 「難しそう」という先入観</p>
+        <p style="margin: 2rem 0;">❌ 導入コストの心配</p>
+        <p style="margin: 2rem 0;">❌ 使い方がわからない</p>
+        <p style="margin: 3rem 0; font-size: 2rem; color: var(--tiffany-blue); font-weight: bold;">
+          ⬇️<br>
+          FOMUSが解決します
+        </p>
+      </div>
+    </div>
+
+    <!-- Slide 6: FOMUS Solution -->
+    <div class="slide">
+      <div class="slide-number">6 / 15</div>
+      <h2>FOMUS AI研修の4つの特徴</h2>
+      <div class="solution-grid">
+        <div class="solution-card">
+          <div class="feature-number">01</div>
+          <h3>経営改善に直結</h3>
+          <p>見積書・企画書・SNS発信など、明日から使える実践的スキル</p>
+        </div>
+        <div class="solution-card">
+          <div class="feature-number">02</div>
+          <h3>楽しいから浸透する</h3>
+          <p>画像・音楽生成で遊び感覚から始めて、自然にAIが好きになる</p>
+        </div>
+        <div class="solution-card">
+          <div class="feature-number">03</div>
+          <h3>初心者に寄り添う</h3>
+          <p>専門用語を使わず、やさしい言葉で丁寧に指導</p>
+        </div>
+        <div class="solution-card">
+          <div class="feature-number">04</div>
+          <h3>助成金対応</h3>
+          <p>実質負担5万円から。ROI抜群の研修プログラム</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 7: Comparison -->
+    <div class="slide">
+      <div class="slide-number">7 / 15</div>
+      <h2>他社AI研修との違い</h2>
+      <table class="comparison-table">
+        <tr>
+          <th>項目</th>
+          <th>他社AI研修</th>
+          <th>FOMUS AI研修</th>
+        </tr>
+        <tr>
+          <td><strong>学習対象</strong></td>
+          <td>GPT操作中心</td>
+          <td class="fomus-advantage">GPT・画像・音楽まで横断体験</td>
+        </tr>
+        <tr>
+          <td><strong>スタイル</strong></td>
+          <td>講義中心（知識提供型）</td>
+          <td class="fomus-advantage">講義3割×実践7割</td>
+        </tr>
+        <tr>
+          <td><strong>雰囲気</strong></td>
+          <td>ビジネス特化で堅苦しい</td>
+          <td class="fomus-advantage">楽しく学んで"AIが好き"になる</td>
+        </tr>
+        <tr>
+          <td><strong>フォロー</strong></td>
+          <td>研修で完結</td>
+          <td class="fomus-advantage">継続的な質問・相談対応</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Slide 8: Program Details -->
+    <div class="slide">
+      <div class="slide-number">8 / 15</div>
+      <h2>研修プログラム詳細</h2>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-number">10h</div>
+          <div>総研修時間</div>
+          <small>2時間 × 5回</small>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">4+</div>
+          <div>AIツール</div>
+          <small>ChatGPT・MidJourney・SUNO・Gemini</small>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">70%</div>
+          <div>実践割合</div>
+          <small>講義30% × 実践70%</small>
+        </div>
+      </div>
+      <div style="margin-top: 2rem; text-align: center;">
+        <h3>カリキュラム</h3>
+        <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; margin-top: 1rem;">
+          <div style="background: var(--tiffany-light); padding: 20px; border-radius: 10px;">
+            <strong>Day1</strong><br>ChatGPT基礎
+          </div>
+          <div style="background: var(--tiffany-light); padding: 20px; border-radius: 10px;">
+            <strong>Day2</strong><br>MidJourney<br>画像生成
+          </div>
+          <div style="background: var(--tiffany-light); padding: 20px; border-radius: 10px;">
+            <strong>Day3</strong><br>SUNO<br>音楽生成
+          </div>
+          <div style="background: var(--tiffany-light); padding: 20px; border-radius: 10px;">
+            <strong>Day4</strong><br>Gemini<br>活用法
+          </div>
+          <div style="background: var(--gold); padding: 20px; border-radius: 10px;">
+            <strong>Day5</strong><br>カスタム<br>業界特化
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 9: Business Impact -->
+    <div class="slide">
+      <div class="slide-number">9 / 15</div>
+      <h2>具体的な業務改善効果</h2>
+      <div class="solution-grid">
+        <div class="solution-card">
+          <h3>📝 書類作成効率化</h3>
+          <p>見積書・契約書の下書きが<span class="highlight">80%時短</span></p>
+        </div>
+        <div class="solution-card">
+          <h3>💡 企画力向上</h3>
+          <p>提案資料・企画書のクオリティ<span class="highlight">大幅アップ</span></p>
+        </div>
+        <div class="solution-card">
+          <h3>📱 マーケティング強化</h3>
+          <p>SNS・Web集客の効率が<span class="highlight">3倍向上</span></p>
+        </div>
+        <div class="solution-card">
+          <h3>🎨 クリエイティブ向上</h3>
+          <p>画像・音楽生成で表現力が<span class="highlight">劇的に拡大</span></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 10: Case Study -->
+    <div class="slide">
+      <div class="slide-number">10 / 15</div>
+      <h2>導入企業の声</h2>
+      <div style="background: linear-gradient(135deg, var(--pearl), #f1f5f9); padding: 40px; border-radius: 20px; margin: 2rem 0; border-left: 6px solid var(--tiffany-blue);">
+        <div style="font-size: 1.3rem; margin-bottom: 1rem; color: var(--tiffany-blue); font-weight: 600;">
+          田中建設株式会社 代表取締役様
+        </div>
+        <blockquote style="font-size: 1.1rem; line-height: 1.8; font-style: italic;">
+          「従業員5名の建設会社ですが、見積書作成や営業資料の効率が大幅に改善されました。AIが怖いイメージから楽しいツールに変わり、全社員が積極的に使うようになりました。助成金のおかげで費用負担も軽く、ROIは抜群です。」
+        </blockquote>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-number" style="color: var(--gold);">80%</div>
+          <div>作業時間削減</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" style="color: var(--gold);">100%</div>
+          <div>社員の積極的活用</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" style="color: var(--gold);">300%</div>
+          <div>ROI（投資対効果）</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 11: Pricing -->
+    <div class="slide">
+      <div class="slide-number">11 / 15</div>
+      <h2>料金プラン</h2>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
+        <div class="price-card">
+          <h3>AI活用プラン</h3>
+          <div class="original-price">定価 ¥200,000</div>
+          <div class="actual-price">実質 ¥50,000</div>
+          <div>助成金活用時</div>
+          <ul style="text-align: left; margin-top: 20px; line-height: 1.8;">
+            <li>ChatGPT・Gemini基礎</li>
+            <li>MidJourney画像生成</li>
+            <li>SUNO音楽生成</li>
+            <li>業務活用実践</li>
+            <li>継続サポート</li>
+          </ul>
+        </div>
+        <div class="price-card">
+          <h3>AIコーディングプラン</h3>
+          <div class="original-price">定価 ¥400,000</div>
+          <div class="actual-price">実質 ¥100,000</div>
+          <div>助成金活用時</div>
+          <ul style="text-align: left; margin-top: 20px; line-height: 1.8;">
+            <li>AI活用プラン全内容</li>
+            <li>プログラミング支援AI</li>
+            <li>Webサイト構築</li>
+            <li>業務システム開発</li>
+            <li>高度なカスタマイズ</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 12: Subsidy -->
+    <div class="slide">
+      <div class="slide-number">12 / 15</div>
+      <h2>助成金について</h2>
+      <div style="text-align: center; margin: 2rem 0;">
+        <h3 style="color: var(--gold); font-size: 2rem; margin-bottom: 1rem;">
+          人材開発支援助成金（リスキリング支援コース）
+        </h3>
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-number" style="color: var(--gold);">75%</div>
+            <div>中小企業補助率</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" style="color: var(--gold);">30万円</div>
+            <div>上限金額</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" style="color: var(--gold);">100%</div>
+            <div>申請サポート</div>
+          </div>
+        </div>
+      </div>
+      <div style="background: linear-gradient(135deg, var(--tiffany-light), #e0f7f6); padding: 30px; border-radius: 15px; text-align: center;">
+        <h3>計算例</h3>
+        <div style="font-size: 1.5rem; margin: 1rem 0;">
+          定価20万円 → <span style="color: var(--gold); font-weight: bold;">補助15万円</span> → <span style="color: var(--tiffany-blue); font-weight: bold;">実質5万円</span>
+        </div>
+        <div style="font-size: 1.5rem; margin: 1rem 0;">
+          定価40万円 → <span style="color: var(--gold); font-weight: bold;">補助30万円</span> → <span style="color: var(--tiffany-blue); font-weight: bold;">実質10万円</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 13: Summary -->
+    <div class="slide">
+      <div class="slide-number">13 / 15</div>
+      <h2>まとめ：研修で得られる3つの価値</h2>
+      <div class="solution-grid">
+        <div class="solution-card" style="grid-column: 1 / -1;">
+          <h3>💰 投資価値</h3>
+          <p>助成金活用で実質5万円から。業務効率化による<span class="highlight">ROI 300%以上</span></p>
+        </div>
+        <div class="solution-card">
+          <h3>🚀 競争優位</h3>
+          <p>AI活用で他社との差別化。<span class="highlight">未来への先行投資</span></p>
+        </div>
+        <div class="solution-card">
+          <h3>😊 組織変革</h3>
+          <p>楽しい学習で社員のモチベーション向上。<span class="highlight">自走する組織</span>へ</p>
+        </div>
+      </div>
+      <div style="text-align: center; margin-top: 3rem; font-size: 1.5rem; color: var(--tiffany-blue); font-weight: bold;">
+        明日から使えるAI人材を、10時間で育成します
+      </div>
+    </div>
+
+    <!-- Slide 14: Contact -->
+    <div class="slide">
+      <div class="slide-number">14 / 15</div>
+      <h2>お申し込み・お問い合わせ</h2>
+      <div class="cta-section">
+        <h3 style="margin-bottom: 1rem;">無料相談受付中</h3>
+        <p style="font-size: 1.2rem; margin-bottom: 2rem;">
+          貴社の課題に合わせた最適なプランをご提案いたします
+        </p>
+        <div style="font-size: 1.5rem; margin-bottom: 1rem;">
+          📧 <strong>fomus.official@gmail.com</strong>
+        </div>
+        <div style="margin-bottom: 2rem;">
+          営業日2-3日以内にご返信いたします
+        </div>
+        <a href="mailto:fomus.official@gmail.com?subject=【AI研修】お問い合わせ" class="cta-button">
+          今すぐ無料相談する
+        </a>
+      </div>
+      <div style="text-align: center; margin-top: 2rem; font-size: 1.1rem; color: var(--charcoal);">
+        <p>助成金申請サポート・カリキュラムカスタマイズも承ります</p>
+      </div>
+    </div>
+
+    <!-- Slide 15: Thank You -->
+    <div class="slide">
+      <div class="slide-number">15 / 15</div>
+      <div style="text-align: center;">
+        <h1 style="font-size: 4rem; margin-bottom: 2rem;">Thank You</h1>
+        <div class="subtitle">ご清聴ありがとうございました</div>
+        <div style="margin: 3rem 0; font-size: 1.3rem;">
+          <div style="margin: 1rem 0;">合同会社FOMUS</div>
+          <div style="margin: 1rem 0;">代表 増尾圭亮</div>
+          <div style="margin: 1rem 0; color: var(--tiffany-blue); font-weight: bold;">fomus.official@gmail.com</div>
+        </div>
+        <div style="margin-top: 4rem; font-size: 1.5rem; color: var(--tiffany-blue);">
+          質疑応答
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="navigation">
+    <button class="nav-btn" id="prevBtn" onclick="changeSlide(-1)">◀ 前へ</button>
+    <button class="nav-btn" id="nextBtn" onclick="changeSlide(1)">次へ ▶</button>
+  </div>
+
+  <script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    const totalSlides = slides.length;
+    
+    document.getElementById('total-slides').textContent = totalSlides;
+    
+    function showSlide(n) {
+      slides[currentSlide].classList.remove('active');
+      currentSlide = (n + slides.length) % slides.length;
+      slides[currentSlide].classList.add('active');
+      
+      document.getElementById('current-slide').textContent = currentSlide + 1;
+      
+      // Update navigation buttons
+      document.getElementById('prevBtn').disabled = currentSlide === 0;
+      document.getElementById('nextBtn').disabled = currentSlide === slides.length - 1;
+    }
+    
+    function changeSlide(direction) {
+      if (direction === 1 && currentSlide < slides.length - 1) {
+        showSlide(currentSlide + 1);
+      } else if (direction === -1 && currentSlide > 0) {
+        showSlide(currentSlide - 1);
+      }
+    }
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'ArrowRight' || e.key === ' ') {
+        changeSlide(1);
+      } else if (e.key === 'ArrowLeft') {
+        changeSlide(-1);
+      }
+    });
+    
+    // Initialize
+    showSlide(0);
+    
+    // Fullscreen mode
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'f' || e.key === 'F') {
+        if (document.fullscreenElement) {
+          document.exitFullscreen();
+        } else {
+          document.documentElement.requestFullscreen();
+        }
+      }
+    });
+  </script>
+</body>
+</html>
