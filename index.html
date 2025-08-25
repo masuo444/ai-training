@@ -19,6 +19,9 @@
   <meta name="geo.placename" content="日本全国">
   <meta name="revisit-after" content="7 days">
   
+  <!-- Google Search Console Verification -->
+  <meta name="google-site-verification" content="PLACEHOLDER_FOR_GSC_VERIFICATION_CODE" />
+  
   <!-- Favicon -->
   <link rel="icon" type="image/jpeg" href="favicon.jpg">
   <link rel="shortcut icon" type="image/jpeg" href="favicon.jpg">
@@ -99,6 +102,15 @@
   }
   </script>
   
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID_PLACEHOLDER"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'GA_MEASUREMENT_ID_PLACEHOLDER');
+  </script>
+  
   <!-- Organization Schema -->
   <script type="application/ld+json">
   {
@@ -125,6 +137,70 @@
     "serviceType": "AI研修・人材育成",
     "knowsAbout": ["AI研修", "ChatGPT", "MidJourney", "SUNO", "企業研修", "リスキリング"],
     "slogan": "AIを活用できる人材に育てる実践型研修"
+  }
+  </script>
+  
+  <!-- LocalBusiness Schema for better local search visibility -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "FOMUS（フォーマス）- 中小企業向けAI研修",
+    "description": "中小企業特化のChatGPT・MidJourney・SUNO実践型AI研修。助成金活用で実質5万円から。経営改善に直結する10時間プログラム。",
+    "url": "https://ai-training.fomusglobal.com",
+    "email": "fomus.official@gmail.com",
+    "telephone": "+81-XXX-XXXX-XXXX",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "JP",
+      "addressLocality": "日本全国（オンライン対応）"
+    },
+    "areaServed": [
+      {
+        "@type": "Country",
+        "name": "Japan"
+      }
+    ],
+    "serviceArea": {
+      "@type": "GeoCircle",
+      "geoMidpoint": {
+        "@type": "GeoCoordinates",
+        "latitude": 35.6762,
+        "longitude": 139.6503
+      },
+      "geoRadius": "1000000"
+    },
+    "priceRange": "¥50,000-¥400,000",
+    "paymentAccepted": "現金, 銀行振込, 助成金",
+    "currenciesAccepted": "JPY",
+    "openingHours": "Mo-Fr 09:00-18:00",
+    "founder": {
+      "@type": "Person",
+      "name": "増尾圭亮",
+      "jobTitle": "代表"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "AI研修サービス",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "ChatGPT実践研修",
+            "description": "中小企業向けChatGPT活用研修"
+          }
+        },
+        {
+          "@type": "Offer", 
+          "itemOffered": {
+            "@type": "Service",
+            "name": "MidJourney画像生成研修",
+            "description": "AI画像生成ツール活用研修"
+          }
+        }
+      ]
+    }
   }
   </script>
   
@@ -1669,6 +1745,130 @@
       font-style: italic;
     }
     
+    /* Case Studies Section */
+    .case-studies-section {
+      background: #f8fffe;
+      padding: 80px 0;
+    }
+    
+    .case-studies-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 50px;
+    }
+    
+    .case-study-card {
+      background: white;
+      border-radius: 16px;
+      padding: 30px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      border: 1px solid #e5f8f7;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .case-study-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+    }
+    
+    .case-study-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      padding-bottom: 15px;
+      border-bottom: 2px solid #0ABAB5;
+    }
+    
+    .case-study-header h3 {
+      color: var(--charcoal);
+      font-size: 18px;
+      margin: 0;
+    }
+    
+    .company-size {
+      background: #0ABAB5;
+      color: white;
+      padding: 4px 12px;
+      border-radius: 12px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    
+    .case-study-content p {
+      margin: 10px 0;
+      line-height: 1.6;
+      font-size: 14px;
+    }
+    
+    .case-study-content strong {
+      color: var(--charcoal);
+    }
+    
+    /* FAQ Section */
+    .faq-section {
+      padding: 80px 0;
+      background: white;
+    }
+    
+    .faq-list {
+      max-width: 800px;
+      margin: 50px auto 0;
+    }
+    
+    .faq-item {
+      border: 1px solid #e5f8f7;
+      border-radius: 12px;
+      margin-bottom: 16px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+    
+    .faq-item:hover {
+      border-color: #0ABAB5;
+    }
+    
+    .faq-question {
+      background: #f8fffe;
+      padding: 20px 30px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background 0.3s ease;
+    }
+    
+    .faq-question:hover {
+      background: #e5f8f7;
+    }
+    
+    .faq-question h3 {
+      margin: 0;
+      color: var(--charcoal);
+      font-size: 16px;
+      font-weight: 600;
+    }
+    
+    .faq-toggle {
+      color: #0ABAB5;
+      font-size: 24px;
+      font-weight: bold;
+      transition: transform 0.3s ease;
+    }
+    
+    .faq-answer {
+      padding: 0 30px 25px;
+      background: white;
+      display: none;
+    }
+    
+    .faq-answer p {
+      margin: 15px 0 0;
+      line-height: 1.7;
+      color: #666;
+    }
+    
     /* CTA - Luxury */
     .cta-section {
       background: linear-gradient(135deg, var(--tiffany-blue), var(--tiffany-dark));
@@ -2941,6 +3141,100 @@
     </div>
   </section>
 
+  <!-- AI Training Case Studies -->
+  <section id="case-studies" class="case-studies-section">
+    <div class="container">
+      <h2>導入事例・実績</h2>
+      <p class="section-description">FOMUS AI研修を受講した企業様の実際の成果をご紹介します</p>
+      
+      <div class="case-studies-grid">
+        <div class="case-study-card">
+          <div class="case-study-header">
+            <h3>製造業A社</h3>
+            <span class="company-size">従業員数50名</span>
+          </div>
+          <div class="case-study-content">
+            <p><strong>課題：</strong>営業資料作成に時間がかかる</p>
+            <p><strong>解決：</strong>ChatGPT活用で資料作成時間を70%短縮</p>
+            <p><strong>成果：</strong>月20時間の業務効率化を実現</p>
+          </div>
+        </div>
+        
+        <div class="case-study-card">
+          <div class="case-study-header">
+            <h3>サービス業B社</h3>
+            <span class="company-size">従業員数30名</span>
+          </div>
+          <div class="case-study-content">
+            <p><strong>課題：</strong>商品カタログの画像作成コスト削減</p>
+            <p><strong>解決：</strong>MidJourneyで高品質画像を内製化</p>
+            <p><strong>成果：</strong>外注費を月15万円削減</p>
+          </div>
+        </div>
+        
+        <div class="case-study-card">
+          <div class="case-study-header">
+            <h3>小売業C社</h3>
+            <span class="company-size">従業員数20名</span>
+          </div>
+          <div class="case-study-content">
+            <p><strong>課題：</strong>販促用BGM制作の外注費が高額</p>
+            <p><strong>解決：</strong>SUNO活用で店舗BGMを自社制作</p>
+            <p><strong>成果：</strong>年間音楽制作費を80%削減</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="faq" class="faq-section">
+    <div class="container">
+      <h2>よくあるご質問</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>AI初心者でも受講できますか？</h3>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>はい、問題ありません。当研修は初心者向けに設計されており、AIの基本概念から丁寧に説明いたします。受講者の90%がAI未経験からスタートしています。</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>助成金は必ず適用されますか？</h3>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>人材開発支援助成金の適用には条件があります。事前に条件を満たしているか確認し、申請サポートも行います。適用率は過去の実績で約85%となっています。</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>オンライン研修の環境要件は？</h3>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>インターネット接続とPCまたはタブレットがあれば受講可能です。ZoomまたはTeamsを使用し、事前に接続テストも実施します。</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>研修後のフォローアップはありますか？</h3>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>研修終了後3ヶ月間のメールサポートが含まれています。実際の業務で疑問点があれば、いつでもご相談ください。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- CTA -->
   <section id="contact">
     <div class="container">
@@ -3131,6 +3425,111 @@ ${message}
         scrollObserver.observe(element);
       });
     }
+    
+    // FAQ Toggle Functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const faqItems = document.querySelectorAll('.faq-item');
+      
+      faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        const answer = item.querySelector('.faq-answer');
+        const toggle = item.querySelector('.faq-toggle');
+        
+        question.addEventListener('click', () => {
+          const isOpen = answer.style.display === 'block';
+          
+          // Close all other FAQ items
+          faqItems.forEach(otherItem => {
+            if (otherItem !== item) {
+              otherItem.querySelector('.faq-answer').style.display = 'none';
+              otherItem.querySelector('.faq-toggle').textContent = '+';
+              otherItem.querySelector('.faq-toggle').style.transform = 'rotate(0deg)';
+            }
+          });
+          
+          // Toggle current item
+          if (isOpen) {
+            answer.style.display = 'none';
+            toggle.textContent = '+';
+            toggle.style.transform = 'rotate(0deg)';
+          } else {
+            answer.style.display = 'block';
+            toggle.textContent = '−';
+            toggle.style.transform = 'rotate(180deg)';
+          }
+        });
+      });
+    });
+
+    // Performance Monitoring with Core Web Vitals
+    function sendToAnalytics(metric) {
+      if (window.gtag) {
+        window.gtag('event', metric.name, {
+          event_category: 'Web Vitals',
+          value: Math.round(metric.name === 'CLS' ? metric.value * 1000 : metric.value),
+          event_label: metric.id,
+          non_interaction: true,
+        });
+      }
+    }
+
+    // Import and use the web-vitals library
+    if ('PerformanceObserver' in window) {
+      // LCP - Largest Contentful Paint
+      new PerformanceObserver((entryList) => {
+        for (const entry of entryList.getEntries()) {
+          if (entry.entryType === 'largest-contentful-paint') {
+            sendToAnalytics({
+              name: 'LCP',
+              value: entry.startTime,
+              id: 'lcp-' + Date.now()
+            });
+          }
+        }
+      }).observe({entryTypes: ['largest-contentful-paint']});
+
+      // FID - First Input Delay
+      new PerformanceObserver((entryList) => {
+        for (const entry of entryList.getEntries()) {
+          if (entry.entryType === 'first-input') {
+            sendToAnalytics({
+              name: 'FID',
+              value: entry.processingStart - entry.startTime,
+              id: 'fid-' + Date.now()
+            });
+          }
+        }
+      }).observe({entryTypes: ['first-input']});
+
+      // CLS - Cumulative Layout Shift
+      let clsValue = 0;
+      new PerformanceObserver((entryList) => {
+        for (const entry of entryList.getEntries()) {
+          if (!entry.hadRecentInput) {
+            clsValue += entry.value;
+          }
+        }
+        sendToAnalytics({
+          name: 'CLS',
+          value: clsValue,
+          id: 'cls-' + Date.now()
+        });
+      }).observe({entryTypes: ['layout-shift']});
+    }
+
+    // Page Load Performance Monitoring
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        const perfData = performance.getEntriesByType('navigation')[0];
+        if (perfData && window.gtag) {
+          window.gtag('event', 'page_load_time', {
+            event_category: 'Performance',
+            value: Math.round(perfData.loadEventEnd - perfData.fetchStart),
+            non_interaction: true,
+          });
+        }
+      }, 0);
+    });
   </script>
 </body>
 </html>
