@@ -462,28 +462,34 @@
     }
     
     .desktop-hero-meta {
-      display: block;
-      font-size: 1.2rem;
-      color: white;
-      font-weight: 600;
+      display: inline-block;
+      font-size: 1.3rem;
+      color: white !important;
+      font-weight: 700;
       background: linear-gradient(135deg, #FFD700, #FFA500);
       padding: 16px 40px;
       border-radius: 50px;
       margin-top: 1.5rem;
-      width: fit-content;
     }
     
     .desktop-hero-meta .gold-text {
-      color: white;
+      color: white !important;
       font-weight: 800;
-      font-size: 1.3rem;
+      font-size: 1.4rem;
     }
     
     /* モバイル要素をデスクトップで非表示 */
     .mobile-hero-line1,
     .mobile-hero-line2,
     .mobile-hero-meta {
-      display: none;
+      display: none !important;
+    }
+    
+    /* デスクトップ要素を表示 */
+    .desktop-hero-line1,
+    .desktop-hero-line2,
+    .desktop-hero-meta {
+      display: block;
     }
     
     .hero-title {
@@ -1965,8 +1971,14 @@
         display: none !important;
       }
       
-      .mobile-hero-line1 {
+      /* モバイル要素を表示 */
+      .mobile-hero-line1,
+      .mobile-hero-line2,
+      .mobile-hero-meta {
         display: block !important;
+      }
+      
+      .mobile-hero-line1 {
         font-size: 36px !important;
         line-height: 1.2 !important;
         font-weight: 700 !important;
@@ -1995,7 +2007,6 @@
       }
       
       .mobile-hero-line2 {
-        display: block !important;
         font-size: 36px !important;
         line-height: 1.2 !important;
         color: var(--charcoal) !important;
