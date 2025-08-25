@@ -1937,12 +1937,14 @@
       
       /* モバイル専用の見やすいレイアウト */
       .hero {
-        padding: 60px 0 80px !important;
+        padding: 20px 0 40px !important;
+        margin-top: 0 !important;
       }
       
       .hero-title {
-        margin-bottom: 50px !important;
-        padding: 20px 0 !important;
+        margin: 0 !important;
+        padding: 10px 0 !important;
+        order: -1;
       }
       
       .main-heading {
@@ -1974,13 +1976,15 @@
       }
       
       .mobile-hero-line1 {
-        font-size: 36px !important;
-        line-height: 1.2 !important;
-        font-weight: 700 !important;
-        color: #333333 !important;
-        margin-bottom: 20px !important;
+        font-size: 48px !important;
+        line-height: 1.1 !important;
+        font-weight: 800 !important;
+        color: #000000 !important;
+        margin-bottom: 16px !important;
         text-align: center !important;
         word-break: keep-all !important;
+        z-index: 9999 !important;
+        position: relative !important;
       }
       
       .mobile-hero-line1 br {
@@ -1988,12 +1992,9 @@
       }
       
       .mobile-hero-line1 .ai-text {
-        background: linear-gradient(135deg, #0ABAB5, #10B981) !important;
-        -webkit-background-clip: text !important;
-        -webkit-text-fill-color: transparent !important;
-        background-clip: text !important;
-        font-weight: 800 !important;
-        font-size: 40px !important;
+        color: #0ABAB5 !important;
+        font-weight: 900 !important;
+        font-size: 52px !important;
       }
       
       .mobile-hero-line1 .green-text {
@@ -2002,13 +2003,15 @@
       }
       
       .mobile-hero-line2 {
-        font-size: 36px !important;
-        line-height: 1.2 !important;
-        color: #333333 !important;
-        font-weight: 700 !important;
-        margin-bottom: 30px !important;
+        font-size: 48px !important;
+        line-height: 1.1 !important;
+        color: #000000 !important;
+        font-weight: 800 !important;
+        margin-bottom: 20px !important;
         text-align: center !important;
         word-break: keep-all !important;
+        z-index: 9999 !important;
+        position: relative !important;
       }
       
       .mobile-hero-line2 br {
@@ -2480,22 +2483,22 @@
       /* Extra small devices - 320px以下 */
       @media (max-width: 320px) {
         .main-heading {
-          padding: 24px 16px !important;
-          margin-bottom: 24px !important;
-        }
-        
-        .mobile-hero-line1 {
-          font-size: 32px !important;
+          padding: 16px 8px !important;
           margin-bottom: 16px !important;
         }
         
+        .mobile-hero-line1 {
+          font-size: 40px !important;
+          margin-bottom: 12px !important;
+        }
+        
         .mobile-hero-line1 .ai-text {
-          font-size: 36px !important;
+          font-size: 44px !important;
         }
         
         .mobile-hero-line2 {
-          font-size: 32px !important;
-          margin-bottom: 24px !important;
+          font-size: 40px !important;
+          margin-bottom: 16px !important;
         }
         
         .mobile-hero-meta {
