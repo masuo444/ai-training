@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://ai-training.fomusglobal.com/sitemap.xml
+Sitemap: https://ai-training.fomus.jp/sitemap.xml
 
 # Crawl-delay for respectful crawling
 Crawl-delay: 1

@@ -35,10 +35,10 @@
 ```
 1. https://search.google.com/search-console にアクセス
 2. 「プロパティを追加」→「URLプレフィックス」選択
-3. https://ai-training.fomusglobal.com を入力
+3. https://ai-training.fomus.jp を入力
 4. 「HTMLタグ」による確認を選択
 5. 表示されたcontent値をindex.htmlの「PLACEHOLDER_FOR_GSC_VERIFICATION_CODE」部分に置換
-6. サイトマップ送信: https://ai-training.fomusglobal.com/sitemap.xml
+6. サイトマップ送信: https://ai-training.fomus.jp/sitemap.xml
 ```
 
 ### 2. Google Analytics 4設定（5分）
