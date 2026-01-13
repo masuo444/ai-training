@@ -795,6 +795,26 @@
       font-size: 82px;
     }
 
+    .price-grid {
+      display: grid;
+      grid-template-columns: minmax(240px, 1fr) auto minmax(240px, 1fr);
+      gap: 16px;
+      align-items: stretch;
+    }
+
+    .limited-label {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(10, 186, 181, 0.12);
+      color: var(--tiffany-dark);
+      font-size: 12px;
+      font-weight: 700;
+      margin: 0 auto 10px;
+    }
+
     .price-badge {
       display: inline-flex;
       align-items: center;
@@ -1122,7 +1142,8 @@
       }
 
       .price-highlight {
-        padding: 22px 18px;
+        padding: 20px 16px;
+        max-width: 100%;
       }
 
       .price-main {
@@ -1138,8 +1159,16 @@
         padding: 6px 14px;
       }
 
+      .price-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .limited-label {
+        margin-bottom: 8px;
+      }
+
       .price-arrow {
-        font-size: 28px;
+        display: none;
       }
 
       .price-arrow span {
@@ -1529,7 +1558,7 @@
           <p style="color: #6b7280; margin-top: 8px;">
             人材開発支援助成金（リスキリング支援）を活用した場合、実質負担は「1人あたり 約5万円」になる可能性があります。
           </p>
-          <div style="margin-top: 18px; display: grid; grid-template-columns: minmax(240px, 1fr) auto minmax(240px, 1fr); gap: 16px; align-items: stretch;">
+          <div class="price-grid" style="margin-top: 18px;">
             <div class="price-highlight">
               <div class="price-badge">AIリスキリング</div>
               <div class="price-main">7<span>万円 / 人</span></div>
@@ -1541,6 +1570,7 @@
               <span>2026年3月までにお申し込みの場合</span>
             </div>
             <div class="price-highlight featured">
+              <div class="limited-label">期間限定</div>
               <div class="price-badge">AIリスキリング</div>
               <div class="price-main">5<span>万円 / 人</span></div>
               <div class="price-base">定価：20万円 / 1名</div>
