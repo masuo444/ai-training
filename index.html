@@ -775,8 +775,24 @@
       background: #fff;
       padding: 28px 22px;
       text-align: center;
-      max-width: 420px;
+      max-width: 520px;
       margin: 0 auto;
+    }
+
+    .price-highlight.featured {
+      border: 2px solid var(--tiffany);
+      background: linear-gradient(180deg, #ffffff 0%, #f0fcfc 100%);
+      box-shadow: 0 24px 48px -36px rgba(10, 186, 181, 0.7);
+      transform: translateY(-6px);
+    }
+
+    .price-highlight.featured .price-badge {
+      background: var(--tiffany);
+      color: #fff;
+    }
+
+    .price-highlight.featured .price-main {
+      font-size: 82px;
     }
 
     .price-badge {
@@ -787,16 +803,17 @@
       color: var(--tiffany);
       font-weight: 700;
       letter-spacing: 0.08em;
-      padding: 6px 16px;
+      padding: 8px 20px;
       font-size: 14px;
-      margin-bottom: 18px;
+      margin-bottom: 24px;
     }
 
     .price-main {
-      font-size: 64px;
+      font-size: 72px;
       font-weight: 700;
       color: var(--tiffany);
       line-height: 1;
+      letter-spacing: 0.02em;
     }
 
     .price-main span {
@@ -807,19 +824,42 @@
     }
 
     .price-base {
-      margin-top: 18px;
+      margin-top: 24px;
       font-size: 22px;
-      color: var(--tiffany);
+      color: #93a5ff;
       text-decoration: line-through;
       font-weight: 600;
     }
 
     .price-note {
-      margin-top: 18px;
+      margin-top: 22px;
       border: 1px solid #e5e7eb;
-      padding: 16px;
+      padding: 16px 18px;
       font-weight: 600;
       color: #374151;
+      border-radius: 12px;
+    }
+
+    .price-arrow {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      font-weight: 700;
+      color: var(--tiffany-dark);
+    }
+
+    .price-arrow .arrow-icon {
+      font-size: 40px;
+      line-height: 1;
+    }
+
+    .price-arrow span {
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      color: #0f766e;
+      text-align: center;
     }
 
     .cta {
@@ -1039,7 +1079,7 @@
 
     @media (max-width: 600px) {
       .price-main {
-        font-size: 52px;
+        font-size: 56px;
       }
 
       .price-base {
@@ -1411,20 +1451,30 @@
           <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 24px; color: var(--ink); margin-top: 0;">研修費（税別）</h3>
           <h4 style="margin-top: 22px; color: var(--ink); font-size: 18px;">助成金活用時の実質負担イメージ</h4>
           <p style="color: #6b7280; margin-top: 8px;">
-            人材開発支援助成金（リスキリング支援）を活用した場合、実質負担は「1人あたり 約7万円」になる可能性があります。
+            人材開発支援助成金（リスキリング支援）を活用した場合、実質負担は「1人あたり 約5万円」になる可能性があります。
           </p>
-          <div style="margin-top: 18px; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; align-items: center;">
+          <div style="margin-top: 18px; display: grid; grid-template-columns: minmax(240px, 1fr) auto minmax(240px, 1fr); gap: 16px; align-items: stretch;">
             <div class="price-highlight">
               <div class="price-badge">AIリスキリング</div>
               <div class="price-main">7<span>万円 / 人</span></div>
               <div class="price-base">定価：28万円 / 1名</div>
               <div class="price-note">助成金：21万円（研修費の75%）</div>
             </div>
-            <div style="font-size: 12px; color: #94a3b8; text-align: left;">
-              <p>※ 助成率・支給額は企業ごとの審査により異なります</p>
-              <p>※ 助成金の受給を保証するものではありません</p>
-              <p>※ 最低受講人数：1名〜（最大3名まで同時受講可）</p>
+            <div class="price-arrow">
+              <div class="arrow-icon">→</div>
+              <span>2026年3月までにお申し込みの場合</span>
             </div>
+            <div class="price-highlight featured">
+              <div class="price-badge">AIリスキリング</div>
+              <div class="price-main">5<span>万円 / 人</span></div>
+              <div class="price-base">定価：20万円 / 1名</div>
+              <div class="price-note">助成金：15万円（研修費の75%）</div>
+            </div>
+          </div>
+          <div style="font-size: 12px; color: #94a3b8; text-align: left; margin-top: 12px;">
+            <p>※ 助成率・支給額は企業ごとの審査により異なります</p>
+            <p>※ 助成金の受給を保証するものではありません</p>
+            <p>※ 最低受講人数：1名〜（最大3名まで同時受講可）</p>
           </div>
         </div>
       </div>
