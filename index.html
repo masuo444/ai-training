@@ -873,6 +873,8 @@
     .price-arrow .arrow-icon {
       font-size: 40px;
       line-height: 1;
+      display: inline-block;
+      transform: rotate(0deg);
     }
 
     .price-arrow span {
@@ -1170,6 +1172,10 @@
       .price-arrow {
         display: flex;
         font-size: 26px;
+      }
+
+      .price-arrow .arrow-icon {
+        transform: rotate(90deg);
       }
 
       .price-arrow span {
@@ -1720,6 +1726,12 @@
       <div class="footer-grid">
         <div style="grid-column: span 2;">
           <div style="font-size: 22px; font-weight: 700; color: #fff; margin-bottom: 16px;">FOMUS</div>
+        </div>
+        <div>
+          <div class="footer-title">FOMUS HP</div>
+          <div class="footer-links">
+            <a href="https://www.fomus.jp/" target="_blank" rel="noopener">https://www.fomus.jp/</a>
+          </div>
         </div>
         <div>
           <div class="footer-title">Menu</div>
